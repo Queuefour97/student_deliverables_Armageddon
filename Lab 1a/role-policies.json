@@ -1,0 +1,8 @@
+{
+    "AttachedPolicies": [
+        {
+            "PolicyName": "ec2_role_policy",
+            "PolicyArn": "arn:aws:iam::975598471165:policy/ec2_role_policy"
+        }
+    ]
+}
