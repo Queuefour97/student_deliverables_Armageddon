@@ -1,0 +1,7 @@
+A) Why is DB inbound source restricted to the EC2 security group? 
+SG are stateful and will allow access and recurring traffic. An instance can go down and become unavailable. The old IP woukld no longer be vaolid. A SG is reusable and will give access to in a amore restrictive manner and follows the concept/principle of least-privilege.
+
+B) What port does MySQL? 3306
+
+C) Why is Secrets Manager better than storing creds in code/user-data? Secrets mgr encrypts data it stores, it can handle key rotation, it has integration with other services easily. 
+

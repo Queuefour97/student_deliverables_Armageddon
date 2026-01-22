@@ -1,0 +1,44 @@
+```
+aws ssm put-parameter \
+    --name "/lab/db/endpoint" \
+    --value "<endpoint>" \
+    --type "String" \
+    --overwrite
+```
+ 
+```
+aws ssm put-parameter \
+    --name "/lab/db/port" \
+    --value "3306" \
+    --type "String" \
+    --overwrite
+```
+ 
+```
+aws ssm put-parameter \
+    --name "/lab/db/name" \
+    --value "<db name>" \
+    --type "String" \
+    --overwrite
+```
+
+aws sns create-topic --name lab-db-incidents Email Subscription
+
+aws sns subscribe \
+   --topic-arn <TOPIC_ARN> \
+   --protocol email \
+   --notification-endpoint your-email@example.com
+   
+   
+aws cloudwatch put-metric-alarm \
+   --alarm-name lab-db-connection-failure \
+   --metric-name DBConnectionErrors \
+   --namespace Lab/RDSApp \
+   --statistic Sum \
+   --period 300 \
+   --threshold 3 \
+   --comparison-operator GreaterThanOrEqualToThreshold \
+   --evaluation-periods 1 \
+   --alarm-actions <SNS_TOPIC_ARN>
+   
+   
