@@ -1,0 +1,25 @@
+records         = [each.value.record]
+allow_overwrite = true
+zone_id
+
+associate_public_ip_address =
+
+aws_subnet.armageddon_private_subnets[0].id
+
+aws secretsmanager delete-secret \
+--secret-id lab/rds/mysql \
+--force-delete-without-recovery
+
+
+MSYS_NO_PATHCONV=1 aws logs describe-log-streams --log-group-name /aws/ec2/lab-rds-app
+
+MSYS_NO_PATHCONV=1 aws logs filter-log-events --log-group-name /aws/lambda/my-lambda --filter-pattern "some pattern"
+
+Command to log into Sessions Manager:
+aws ssm start-session --target <instance id>
+
+aws ssm start-session \
+    --target <INSTANCE_ID> \
+    --document-name AWS-StartPortForwardingSession \
+    --parameters '{"portNumber":["80"],"localPortNumber":["8080"]}'
+
