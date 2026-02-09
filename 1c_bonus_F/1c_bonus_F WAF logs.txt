@@ -1,0 +1,10 @@
+WAF logs (when you chose waf_log_destination="cloudwatch")
+    App logs (your /aws/ec2/app-rds-app group)
+
+WAF logs (when you chose waf_log_destination="cloudwatch")
+    App logs (your /aws/ec2/app-rds-app group)
+
+
+WAF log group: aws-waf-logs-armageddon-final-webacl01
+  App log group: /aws/ec2/armageddon-final-rds-app
+
