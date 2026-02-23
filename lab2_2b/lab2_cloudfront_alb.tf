@@ -11,7 +11,7 @@ resource "aws_cloudfront_distribution" "armageddon_cf01" {
     custom_origin_config {
       http_port              = 80
       https_port             = 443
-      origin_protocol_policy = "https-only"
+      origin_protocol_policy = "http-only"
       origin_ssl_protocols   = ["TLSv1.2"]
     }
 
@@ -32,31 +32,44 @@ resource "aws_cloudfront_distribution" "armageddon_cf01" {
 
 
   # New default_cache_behavior
-default_cache_behavior {
-  target_origin_id       = "${var.project_name}-alb-origin01"
-  viewer_protocol_policy = "redirect-to-https"
+  default_cache_behavior {
+    target_origin_id       = "${var.project_name}-alb-origin01"
+    viewer_protocol_policy = "redirect-to-https"
 
-  allowed_methods = ["GET","HEAD","OPTIONS","PUT","POST","PATCH","DELETE"]
-  cached_methods  = ["GET","HEAD"]
+    allowed_methods = ["GET", "HEAD", "OPTIONS", "PUT", "POST", "PATCH", "DELETE"]
+    cached_methods  = ["GET", "HEAD"]
 
-  cache_policy_id          = aws_cloudfront_cache_policy.armageddon_cache_api_disabled01.id
-  origin_request_policy_id = aws_cloudfront_origin_request_policy.armageddon_orp_api01.id
- }
-ordered_cache_behavior {
-  path_pattern           = "/static/*"
-  target_origin_id       = "${var.project_name}-alb-origin01"
-  viewer_protocol_policy = "redirect-to-https"
+    # TODO: students choose cache policy / origin request policy for their app type
+    # For APIs, typically forward all headers/cookies/querystrings.
+    # Added per lookup 02192026
+    # forwarded_values {
+    #   query_string = true
+    #   headers      = ["*"]
+    #   cookies { forward = "all" }
+    # }
 
-  allowed_methods = ["GET","HEAD","OPTIONS"]
-  cached_methods  = ["GET","HEAD"]
+    min_ttl     = 0
+    default_ttl = 0
+    max_ttl     = 0
 
-  cache_policy_id            = aws_cloudfront_cache_policy.armageddon_cache_static01.id
-  origin_request_policy_id   = aws_cloudfront_origin_request_policy.armageddon_orp_static01.id
-  response_headers_policy_id = aws_cloudfront_response_headers_policy.armageddon_rsp_static01.id
-}
+    cache_policy_id          = aws_cloudfront_cache_policy.armageddon_cache_api_disabled01.id
+    origin_request_policy_id = aws_cloudfront_origin_request_policy.armageddon_orp_api01.id
+  }
+  ordered_cache_behavior {
+    path_pattern           = "/static/*"
+    target_origin_id       = "${var.project_name}-alb-origin01"
+    viewer_protocol_policy = "redirect-to-https"
+
+    allowed_methods = ["GET", "HEAD", "OPTIONS"]
+    cached_methods  = ["GET", "HEAD"]
+
+    cache_policy_id            = aws_cloudfront_cache_policy.armageddon_cache_static01.id
+    origin_request_policy_id   = aws_cloudfront_origin_request_policy.armageddon_orp_static01.id
+    response_headers_policy_id = aws_cloudfront_response_headers_policy.armageddon_rsp_static01.id
+  }
 
   #   # TODO: students choose cache policy / origin request policy for their app type
-  #   # For APIs, typically forward all headers/cookies/querystrings.
+  # #   # For APIs, typically forward all headers/cookies/querystrings.
   #   forwarded_values {
   #     query_string = true
   #     headers      = ["*"]
@@ -75,11 +88,11 @@ ordered_cache_behavior {
 
   # TODO: students must use ACM cert in us-east-1 for CloudFront
 
- 
+
   viewer_certificate {
     # acm_certificate_arn      = var.cloudfront_acm_cert_arn
     # Changed from armageddon to armageddon-final; if it blows-up replace with "armageddon"
-    acm_certificate_arn        = aws_acm_certificate.armageddon_cf_cert01.arn
+    acm_certificate_arn      = aws_acm_certificate.armageddon_cf_cert01.arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
   }

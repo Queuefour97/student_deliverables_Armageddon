@@ -5,18 +5,29 @@ data "aws_ec2_managed_prefix_list" "armageddon_cf_origin_facing01" {
 
 
 # Explanation: Only CloudFront origin-facing IPs may speak to the ALB — direct-to-ALB attacks die here.
+# resource "aws_security_group_rule" "armageddon_alb_ingress_cf44301" {
+#   type              = "ingress"
+#   security_group_id = aws_security_group.armageddon_alb_sg01.id
+#   from_port         = 443
+#   to_port           = 443
+#   protocol          = "tcp"
+
+#   prefix_list_ids = [
+#     data.aws_ec2_managed_prefix_list.armageddon_cf_origin_facing01.id
+#   ]
+# }
+
 resource "aws_security_group_rule" "armageddon_alb_ingress_cf44301" {
   type              = "ingress"
   security_group_id = aws_security_group.armageddon_alb_sg01.id
-  from_port         = 443
-  to_port           = 443
+  from_port         = 80
+  to_port           = 80
   protocol          = "tcp"
 
   prefix_list_ids = [
     data.aws_ec2_managed_prefix_list.armageddon_cf_origin_facing01.id
   ]
 }
-
 
 
 # Explanation: This is armageddon’s secret handshake — if the header isn’t present, you don’t get in.
@@ -30,7 +41,7 @@ resource "random_password" "armageddon_origin_header_value01" {
 # Explanation: ALB checks for armageddon’s secret growl — no growl, no service.
 resource "aws_lb_listener_rule" "armageddon_require_origin_header01" {
   listener_arn = aws_lb_listener.armageddon_https_listener01.arn
-  priority     = 10
+  priority     = 1
 
   action {
     type             = "forward"

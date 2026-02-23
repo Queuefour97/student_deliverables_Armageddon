@@ -195,14 +195,12 @@ resource "aws_lb_listener" "armageddon_http_listener01" {
   protocol          = "HTTP"
 
   default_action {
-    type = "redirect"
-    redirect {
-      port        = "443"
-      protocol    = "HTTPS"
-      status_code = "HTTP_301"
-    }
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.armageddon_tg01.arn
+
   }
 }
+
 
 # Explanation: HTTPS listener is the real hangar bay — TLS terminates here, then traffic goes to private targets.
 resource "aws_lb_listener" "armageddon_https_listener01" {
@@ -213,8 +211,17 @@ resource "aws_lb_listener" "armageddon_https_listener01" {
   certificate_arn   = aws_acm_certificate.armageddon_acm_cert01.arn
 
   default_action {
-    type             = "forward"
-    target_group_arn = aws_lb_target_group.armageddon_tg01.arn
+    # 02/19/2026: Changed from forward to fixed-response to block all traffic by default; specific allow rule added in aws_lb_listener_rule.armageddon_require_origin_header01
+    #type             = "forward"
+    #target_group_arn = aws_lb_target_group.armageddon_tg01.arn
+    # adding a default fixed-response to block all traffic that doesn't match the specific allow rule with the secret header
+    # 221-225: Added aws_lb_listener_rule.armageddon_default_block01 to handle this instead, so we can return a custom 403 message
+    type = "fixed-response"
+    fixed_response {
+      content_type = "text/plain"
+      message_body = "Access Denied - Origin Header Required"
+      status_code  = "403"
+    }
   }
 
   depends_on = [aws_acm_certificate_validation.armageddon_acm_validation01_dns_bonus]
@@ -226,8 +233,8 @@ resource "aws_lb_listener" "armageddon_https_listener01" {
 
 # Explanation: WAF is the shield generator — it blocks the cheap blaster fire before it hits your ALB.
 resource "aws_wafv2_web_acl" "armageddon_waf01" {
-  count = var.enable_waf ? 1 : 0
-   provider = aws.east
+  count    = var.enable_waf ? 1 : 0
+  provider = aws.east
 
   name  = "${var.project_name}-waf01"
   scope = "CLOUDFRONT"

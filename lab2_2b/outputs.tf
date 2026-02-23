@@ -68,6 +68,15 @@ output "cloudfront_distribution_id" {
   value = aws_cloudfront_distribution.armageddon_cf01.id
 }
 
+output "target_group_arn" {
+  value = aws_lb_target_group.armageddon_tg01.arn
+}
+
+output "armageddon_origin_header_value" {
+  value     = random_password.armageddon_origin_header_value01.result
+  sensitive = true
+}
+
 
 # output "armageddon_waf_firehose_name" {
 #   value = var.waf_log_destination == "firehose" ? aws_kinesis_firehose_delivery_stream.armageddon_waf_firehose01[0].name : null

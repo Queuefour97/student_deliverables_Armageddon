@@ -1,5 +1,5 @@
 # Explanation: DNS now points to CloudFront — nobody should ever see the ALB again.
-resource "aws_route53_record" "chewbacca_apex_to_cf02" {
+resource "aws_route53_record" "armageddon_apex_to_cf02" {
   zone_id = data.aws_route53_zone.armageddon_existing_zone01.zone_id
   name    = var.domain_name
   type    = "A"
@@ -11,8 +11,8 @@ resource "aws_route53_record" "chewbacca_apex_to_cf02" {
   }
 }
 
-# Explanation: app.chewbacca-growl.com also points to CloudFront — same doorway, different sign.
-resource "aws_route53_record" "chewbacca_app_to_cf02" {
+# Explanation: app.firstpointand.click also points to CloudFront — same doorway, different sign.
+resource "aws_route53_record" "armageddon_app_to_cf02" {
   zone_id = data.aws_route53_zone.armageddon_existing_zone01.zone_id
   name    = "${var.app_subdomain}.${var.domain_name}"
   type    = "A"

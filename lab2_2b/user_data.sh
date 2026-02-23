@@ -4,8 +4,14 @@ dnf update -y
 dnf install -y python3-pip mariadb105
 pip3 install flask pymysql boto3 watchtower
 
-# 2. Create Directory
+# 2. Create Directory Structure
 mkdir -p /opt/rdsapp
+mkdir -p /opt/rdsapp/static
+
+# 2.1 Create Static Files (CRITICAL for Lab 2B grading)
+echo "<h1>Version 2.0 - Static Content</h1>" > /opt/rdsapp/static/index.html
+# ADDED: This file is required for the curl -I tests in Deliverable D
+echo "Jorune says: If you see this, CloudFront is talking to the ALB!" > /opt/rdsapp/static/example.txt
 
 # 3. Create the Python Script (The Simple Version)
 cat >/opt/rdsapp/app.py <<'PY'
@@ -101,6 +107,46 @@ def add_note():
         record_failure(str(e))
         return f"Add Failed: {e}", 500
 
+# --- LAB 2B: STATIC ROUTE ---
+# Headers are now handled by the @app.after_request middleware above.
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(STATIC_FOLDER, filename)
+
+# --- LAB 2B: API ROUTES ---
+@app.route('/api/public-feed')
+def public_feed():
+    data = {"message": "The market is moving!", "server_time_utc": time.time()}
+    response = make_response(jsonify(data))
+
+    # Origin-Driven Caching:
+    # public: CloudFront is allowed to store this.
+    # s-maxage=30: CloudFront holds it for 30s (Shared Max Age).
+    response.headers['Cache-Control'] = 'public, s-maxage=30, max-age=0'
+    return response
+
+@app.route('/api/list')
+def private_list():
+    # Simulate sensitive data retrieval
+    try:
+        conn = get_conn()
+        cur = conn.cursor()
+        cur.execute("SELECT note FROM notes ORDER BY id DESC LIMIT 5;")
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+        data = {"notes": [r[0] for r in rows], "status": "private"}
+    except:
+        data = {"error": "db_connection_failed"}
+
+    response = make_response(jsonify(data))
+
+    # Security Header (CRITICAL):
+    # private: CloudFront must NOT store this.
+    # no-store: Do not write to disk.
+    response.headers['Cache-Control'] = 'private, no-store'
+    return response
+    
 @app.route("/list")
 def list_notes():
     try:

@@ -2,12 +2,12 @@
 # #1) Cache policy for static content (aggressive)
 # ##############################################################
 
-# # Explanation: Static files are the easy win—armageddon caches them like hyperfuel for speed.
+# # Explanation: Static files are the easy win — armageddon caches them like hyperfuel for speed.
 resource "aws_cloudfront_cache_policy" "armageddon_cache_static01" {
   name        = "${var.project_name}-cache-static01"
   comment     = "Aggressive caching for /static/*"
-  default_ttl = 86400        # 1 day
-  max_ttl     = 31536000     # 1 year
+  default_ttl = 86400    # 1 day
+  max_ttl     = 31536000 # 1 year
   min_ttl     = 0
 
   parameters_in_cache_key_and_forwarded_to_origin {
@@ -38,13 +38,22 @@ resource "aws_cloudfront_cache_policy" "armageddon_cache_api_disabled01" {
   default_ttl = 0
   max_ttl     = 0
   min_ttl     = 0
- 
+
   parameters_in_cache_key_and_forwarded_to_origin {
-    cookies_config       { cookie_behavior = "none" }
+    cookies_config { cookie_behavior = "none" }
     query_strings_config { query_string_behavior = "none" }
-    headers_config       { header_behavior = "none" }
- 
-    
+    headers_config { header_behavior = "none" }
+
+    # # Explanation: Forward auth-related headers to origin, but DO NOT include random headers in cache key.
+    # # Students: choose only required headers (Authorization is the classic case).
+    #     headers_config {
+    #       header_behavior = "whitelist"
+    #       headers {
+    #         items = ["Authorization", "Host"]
+    #       }
+    #     }
+
+
   }
 }
 
@@ -78,6 +87,7 @@ resource "aws_cloudfront_origin_request_policy" "armageddon_orp_api01" {
 resource "aws_cloudfront_origin_request_policy" "armageddon_orp_static01" {
   name    = "${var.project_name}-orp-static01"
   comment = "Minimal forwarding for static assets"
+
 
   cookies_config { cookie_behavior = "none" }
   query_strings_config { query_string_behavior = "none" }

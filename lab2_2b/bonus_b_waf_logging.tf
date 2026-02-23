@@ -9,8 +9,8 @@
 
 # # Explanation: WAF logs in CloudWatch are your “blaster-cam footage”—fast search, fast triage, fast truth.
 resource "aws_cloudwatch_log_group" "armageddon_waf_log_group01" {
-  count = var.waf_log_destination == "cloudwatch" ? 1 : 0
- provider = aws.east
+  count    = var.waf_log_destination == "cloudwatch" ? 1 : 0
+  provider = aws.east
   # NOTE: AWS requires WAF log destination names start with aws-waf-logs- (students must not rename this).
   # aws-waf-logs-armageddon-final-webacl01
   name = "aws-waf-logs-${var.project_name}-webacl01"
@@ -24,8 +24,8 @@ resource "aws_cloudwatch_log_group" "armageddon_waf_log_group01" {
 
 # Explanation: This wire connects the shield generator to the black box—WAF -> CloudWatch Logs.
 resource "aws_wafv2_web_acl_logging_configuration" "armageddon_waf_logging01" {
-  count = var.enable_waf && var.waf_log_destination == "cloudwatch" ? 1 : 0
- provider = aws.east
+  count        = var.enable_waf && var.waf_log_destination == "cloudwatch" ? 1 : 0
+  provider     = aws.east
   resource_arn = aws_wafv2_web_acl.armageddon_waf01[0].arn
   log_destination_configs = [
     aws_cloudwatch_log_group.armageddon_waf_log_group01[0].arn
@@ -44,7 +44,7 @@ resource "aws_wafv2_web_acl_logging_configuration" "armageddon_waf_logging01" {
 # Explanation: S3 WAF logs are the long-term archive—armageddon likes receipts that survive dashboards.
 resource "aws_s3_bucket" "armageddon_waf_logs_bucket01" {
   count = var.waf_log_destination == "s3" ? 1 : 0
-   
+
 
   bucket = "aws-waf-logs-${var.project_name}-${data.aws_caller_identity.armageddon_self01.account_id}"
 
@@ -68,8 +68,8 @@ resource "aws_s3_bucket_public_access_block" "armageddon_waf_logs_pab01" {
 
 # Explanation: Connect shield generator to archive vault—WAF -> S3.
 resource "aws_wafv2_web_acl_logging_configuration" "armageddon_waf_logging_s3_01" {
-  count = var.enable_waf && var.waf_log_destination == "s3" ? 1 : 0
- provider = aws.east
+  count        = var.enable_waf && var.waf_log_destination == "s3" ? 1 : 0
+  provider     = aws.east
   resource_arn = aws_wafv2_web_acl.armageddon_waf01[0].arn
   log_destination_configs = [
     aws_s3_bucket.armageddon_waf_logs_bucket01[0].arn
