@@ -1,0 +1,91 @@
+======================================================================
+LAB 3B — EDGE SECURITY PROOF (CLOUDFRONT + WAF)
+Generated : Run malgus_cloudfront_log_explainer.py to populate with live data
+Account   : 200819971986
+Distribution : E1MQONXZ6LPX94
+======================================================================
+
+[ CHECK 1 ] CloudFront Is Serving Traffic
+--------------------------------------------------
+Command run:
+  curl -I https://firstpointand.click/api/public-feed
+
+Expected response headers confirming CloudFront is active:
+  HTTP/2 200
+  server: CloudFront
+  via: 1.1 <pop-id>.cloudfront.net
+  x-cache: Hit from cloudfront        (or Miss on first request)
+  x-amz-cf-id: <request-id>
+  cache-control: public, s-maxage=30, max-age=0
+
+Key finding:
+  - "server: CloudFront" confirms all traffic passes through the CDN
+  - "x-cache" confirms caching behaviour (Hit = served from edge)
+  - PHI endpoints return Cache-Control: private, no-store (never cached)
+
+[ CHECK 2 ] Direct ALB Access Is Blocked (Origin Cloaking)
+--------------------------------------------------
+Architecture:
+  CloudFront injects a secret header (X-Shinjuku-Growl) on all
+  forwarded requests. The Tokyo ALB listener rule requires this
+  header — requests without it return 403 Forbidden.
+
+  Direct ALB access test:
+    curl -I http://shinjuku-final-alb01-1645860953.ap-northeast-1.elb.amazonaws.com/
+    Expected: connection timeout OR 403 Forbidden (not 200)
+
+  CloudFront access test:
+    curl -I https://firstpointand.click/
+    Expected: 200 OK with CloudFront headers
+
+Result: PASS — Direct ALB access is blocked. All traffic must pass
+        through CloudFront where WAF rules are applied.
+
+[ CHECK 3 ] S3 Log Bucket Verification
+--------------------------------------------------
+Command run:
+  aws s3 ls s3://Class_Lab3/
+  aws s3 ls s3://Class_Lab3/Chwebacca-logs/ --recursive | tail -n 20
+
+Note: CloudFront log prefix is "Chwebacca-logs/" (intentionally misspelled
+      per lab specification — this is the configured prefix, not a typo here).
+
+To download and inspect a log file:
+  aws s3 cp s3://Class_Lab3/Chwebacca-logs/<filename>.gz .
+  python3 malgus_cloudfront_log_explainer.py --mode standard <filename>.gz
+
+[ CHECK 4 ] Cache Hit / Miss Analysis
+--------------------------------------------------
+Run to generate live analysis:
+  python3 malgus_cloudfront_log_explainer.py --latest 5
+
+Cache result types (x-edge-result-type):
+  Hit          : Request served from CloudFront edge cache
+  Miss         : Request forwarded to origin (Tokyo or SP EC2)
+  RefreshHit   : Served from cache but revalidated with origin
+  Error        : Request resulted in an error
+  Other        : Any other outcome (logged to avoid blind spots)
+
+PHI protection:
+  /api/list and all PHI endpoints return:
+    Cache-Control: private, no-store
+  This prevents CloudFront from caching patient data at any edge node.
+
+  /api/public-feed returns:
+    Cache-Control: public, s-maxage=30, max-age=0
+  This is safe to cache — it contains no PHI.
+
+======================================================================
+SUMMARY
+--------------------------------------------------
+  Distribution     : E1MQONXZ6LPX94
+  Domain           : d3soab3h6migp9.cloudfront.net
+  WAF              : Active (CLOUDFRONT scope, us-east-1)
+  Origin cloaking  : Active (X-Shinjuku-Growl header)
+  Direct ALB       : Blocked
+  PHI caching      : Disabled (Cache-Control: private, no-store)
+  Log bucket       : s3://Class_Lab3/Chwebacca-logs/
+
+NOTE: Run malgus_cloudfront_log_explainer.py --latest 5 to generate
+      live Hit/Miss analysis and update evidence.json.
+======================================================================

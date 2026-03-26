@@ -1,0 +1,26 @@
+======================================================================
+LAB 3B — NETWORK CORRIDOR PROOF (LIVE OUTPUT)
+Generated : 2026-03-26T09:46:46Z
+Account   : 200819971986
+======================================================================
+
+[ TRANSIT GATEWAYS ]
+  Tokyo TGWs    : ['tgw-0372e6a6b4b4da24b']
+  SP TGWs       : ['tgw-055c4115682138ae5']
+
+[ ATTACHMENTS ]
+  Tokyo         : [('tgw-attach-001ca2046d97cf069', 'available'), ('tgw-attach-031dad7a86e912836', 'available')]
+  SP            : [('tgw-attach-001ca2046d97cf069', 'available'), ('tgw-attach-0af8e6f057d44f5d1', 'available')]
+
+[ ROUTES: Tokyo -> SP CIDR 10.200.0.0/16 ]
+  rtb-0d70451d36e7a32b9 : 10.200.0.0/16 -> tgw-0372e6a6b4b4da24b (active)
+  RESULT: PASS
+
+[ ROUTES: SP -> Tokyo CIDR 10.100.0.0/16 ]
+  rtb-012d4a11c675bb7ec : 10.100.0.0/16 -> tgw-055c4115682138ae5 (active)
+  RESULT: PASS
+
+======================================================================
+  Corridor type : AWS private backbone (no public internet)
+  PHI path      : SP EC2 -> TGW peering -> Tokyo RDS (private IPs only)
+======================================================================
