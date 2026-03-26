@@ -1,0 +1,641 @@
+sao_paulo bash shell output:
+
+-> null    
+          - hostname_type                        = "ip-name" -> null
+        }
+
+      ~ root_block_device (known after apply)
+      - root_block_device {
+          - delete_on_termination = true -> null
+          - device_name           = "/dev/xvda" -> null
+          - encrypted             = false -> null
+          - iops                  = 3000 -> null
+          - tags                  = {} -> null
+          - tags_all              = {} -> null
+          - throughput            = 125 -> null
+          - volume_id             = "vol-0ea1f1b8a523c8507" -> null 
+          - volume_size           = 8 -> null
+          - volume_type           = "gp3" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      ~ secondary_network_interface (known after apply)
+    }
+
+  # aws_route53_record.liberdale_acm_validation["app.firstpointand.click"] will be updated in-place
+  ~ resource "aws_route53_record" "liberdale_acm_validation" {      
+        id                               = "Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME"       
+        name                             = "_2887c024ef221b96b378e669c909a316.app.firstpointand.click"
+      ~ ttl                              = 6 -> 60
+        # (8 unchanged attributes hidden)
+    }
+
+  # aws_route53_record.liberdale_cf_validation["app.firstpointand.click"] will be updated in-place
+  ~ resource "aws_route53_record" "liberdale_cf_validation" {       
+        id                               = "Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME"       
+        name                             = "_2887c024ef221b96b378e669c909a316.app.firstpointand.click"
+      ~ ttl                              = 6 -> 60
+        # (8 unchanged attributes hidden)
+    }
+
+Plan: 1 to add, 2 to change, 1 to destroy.
+
+Changes to Outputs:
+  ~ liberdale_ec2_instance_id      = "i-0ecc8cbc8cf94e7e3" -> (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+aws_instance.liberdale_ec201: Destroying... [id=i-0ecc8cbc8cf94e7e3]
+aws_route53_record.liberdale_cf_validation["app.firstpointand.click"]: Modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_route53_record.liberdale_acm_validation["app.firstpointand.click"]: Modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_instance.liberdale_ec201: Still destroying... [id=i-0ecc8cbc8cf94e7e3, 00m10s elapsed]
+aws_route53_record.liberdale_cf_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m10s elapsed]
+aws_route53_record.liberdale_acm_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m10s elapsed]
+aws_instance.liberdale_ec201: Still destroying... [id=i-0ecc8cbc8cf94e7e3, 00m20s elapsed]
+aws_route53_record.liberdale_cf_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m20s elapsed]
+aws_route53_record.liberdale_acm_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m20s elapsed]
+aws_instance.liberdale_ec201: Destruction complete after 21s
+aws_instance.liberdale_ec201: Creating...
+aws_route53_record.liberdale_cf_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m30s elapsed]
+aws_route53_record.liberdale_acm_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m30s elapsed]
+aws_instance.liberdale_ec201: Still creating... [00m10s elapsed]
+aws_route53_record.liberdale_cf_validation["app.firstpointand.click"]: Modifications complete after 32s [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_route53_record.liberdale_acm_validation["app.firstpointand.click"]: Modifications complete after 32s [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_instance.liberdale_ec201: Creation complete after 15s [id=i-0901ec11844eb54cf]
+
+Apply complete! Resources: 1 added, 2 changed, 1 destroyed.
+
+Outputs:
+
+alb_dns_name = "liberdade-final-alb01-1823016414.sa-east-1.elb.amazonaws.com"
+alb_sg_id = "sg-06909998330abe20c"
+liberdale_alb_logs_bucket_name = "liberdade-final-alb-logs-975598471165"
+liberdale_apex_url_https = "https://firstpointand.click"
+liberdale_app_url_https = "https://app.firstpointand.click"
+liberdale_ec2_instance_id = "i-0901ec11844eb54cf"
+liberdale_log_group_name = "/aws/ec2/liberdade-final-rds-app"       
+liberdale_origin_header_value = <sensitive>
+liberdale_private_subnet_ids = [
+  "subnet-05e115d0ec65bff8c",
+  "subnet-04f14d0096537e8bd",
+]
+liberdale_public_subnet_ids = [
+  "subnet-027b5cf4c8c72c9f1",
+  "subnet-0268dbe9ad85b32b5",
+]
+liberdale_sns_topic_arn = "arn:aws:sns:sa-east-1:975598471165:liberdade-final-db-incidents"
+liberdale_vpc_id = "vpc-0c90d6182b218c5ae"
+liberdale_waf_log_destination = "cloudwatch"
+saopaulo_tgw_id = "tgw-055c4115682138ae5"
+saopaulo_vpc_cidr = "10.200.0.0/16"
+target_group_arn = "arn:aws:elasticloadbalancing:sa-east-1:975598471165:targetgroup/liberdade-final-tg01/842ab70e2bdaf6be"
+tokyo_rds_endpoint_in_use = "shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com"
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ terraform output liberdale_ec2_instance_id
+"i-0901ec11844eb54cf"
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ aws ssm start-session \
+  --target i-0901ec11844eb54cf \
+  --region sa-east-1
+
+Starting session with SessionId: AWSCLI4-2p7necdoryax635sju76j4gkn4 
+sh-5.2$ curl http://localhost/health
+{"db":"tokyo-via-tgw","region":"sa-east-1","status":"ok"}
+sh-5.2$ nc -vz shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com 3306
+Ncat: Version 7.93 ( https://nmap.org/ncat )
+Ncat: Connected to 10.100.102.43:3306.
+Ncat: 0 bytes sent, 0 bytes received in 0.29 seconds.
+sh-5.2$ curl http://localhost/init
+Init Failed (check TGW route and RDS SG): An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret.sh-5.2$ aws secretsmanager list-secrets \
+>   --region sa-east-1 \
+>   --query "SecretList[].Name" \
+>   --output table
+sh-5.2$ exit
+exit
+
+
+Exiting session with sessionId: AWSCLI4-2p7necdoryax635sju76j4gkn4. 
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ aws secretsmanager list-secrets \
+  --region sa-east-1 \
+  --query "SecretList[].Name" \
+  --output table
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ aws ssm start-session \
+  --target i-0901ec11844eb54cf \
+  --region sa-east-1
+
+Starting session with SessionId: AWSCLI4-z27ovbv5dcrj52vqd6ynofgyri 
+sh-5.2$ sudo sed -i 's/boto3.client("secretsmanager", region_name=REGION)/boto3.client("secretsmanager", region_name="ap-northeast-1")/' /opt/rdsapp/app.py
+sudo systemctl restart rdsapp
+sleep 5
+curl http://localhost/healthsudo systemctl restart rdsapp
+sleep 5
+curl http://localhost/healthsh-5.2$ curl http://localhost/init
+Init Failed (check TGW route and RDS SG): An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret.sh-5.2$ grep -n "secretsmanager\|SECRET_ID" /opt/rdsapp/app.py
+13:SECRET_ID     = os.environ.get("SECRET_ID",  "shinjuku-final/rds/mysql1")  # FIX: Tokyo secret
+20:sm  = boto3.client("secretsmanager", region_name="ap-northeast-1")
+56:    s_resp = sm.get_secret_value(SecretId=SECRET_ID)
+sh-5.2$ exit
+exit
+
+
+Exiting session with sessionId: AWSCLI4-z27ovbv5dcrj52vqd6ynofgyri. 
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ aws secretsmanager describe-secret \
+  --secret-id shinjuku-final/rds/mysql1 \
+  --region ap-northeast-1 \
+  --query "{Name:Name, ARN:ARN}" \
+  --output table
+--------------------------------------------------------------------------------------------------------
+|                                            DescribeSecret         
+                                   |
++------+-----------------------------------------------------------------------------------------------+
+|  ARN |  arn:aws:secretsmanager:ap-northeast-1:975598471165:secret:shinjuku-final/rds/mysql1-Ud6iv9   |
+|  Name|  shinjuku-final/rds/mysql1                                 
+                                   |
++------+-----------------------------------------------------------------------------------------------+
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ curl -s http://169.254.169.254/latest/meta-data/iam/security-credentials/
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ aws ssm start-session \
+  --target i-0901ec11844eb54cf \
+  --region sa-east-1
+
+Starting session with SessionId: AWSCLI4-66l9fbbllby5jc9saxogk927ay 
+sh-5.2$ curl -s http://169.254.169.254/latest/meta-data/iam/security-credentials/
+sh-5.2$ curl -s http://169.254.169.254/latest/meta-data/iam/info
+sh-5.2$ curl -s -H "X-aws-ec2-metadata-token-ttl-seconds: 21600" \
+ >   -X PUT http://169.254.169.254/latest/api/token | \
+>   xargs -I{} curl -s -H "X-aws-ec2-metadata-token: {}" \
+>   http://169.254.169.254/latest/meta-data/iam/security-credentials/
+liberdade-final-ec2-role01sh-5.2$ exit
+exit
+
+
+Exiting session with sessionId: AWSCLI4-66l9fbbllby5jc9saxogk927ay. 
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ aws iam list-role-policies \
+  --role-name liberdade-final-ec2-role01 \
+  --output table
+
+aws iam list-attached-role-policies \
+  --role-name liberdade-final-ec2-role01 \
+  --output table
+------------------
+|ListRolePolicies|
++----------------+
+
+---------------------------------------------------------------------------------------------------------------
+|                                          ListAttachedRolePolicies                                           |
++-------------------------------------------------------------------------------------------------------------+
+||                                             AttachedPolicies                                              ||
+|+---------------------------------------------------------------------+-------------------------------------+|
+||                              PolicyArn                           
+   |             PolicyName              ||
+----------------+-------------------------------------+|            
+||  arn:aws:iam::975598471165:policy/liberdade-final-lp-cwlogs01       |  liberdade-final-lp-cwlogs01        ||
+||  arn:aws:iam::975598471165:policy/liberdade-final-lp-ssm-read01     |  liberdade-final-lp-ssm-read01      ||
+||  arn:aws:iam::975598471165:policy/liberdade-final-lp-secrets-read01 |  liberdade-final-lp-secrets-read01  ||
+||  arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy             
+   |  CloudWatchAgentServerPolicy        ||
+||  arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore            
+e       ||                                                         
+||  arn:aws:iam::aws:policy/SecretsManagerReadWrite                 
+   |  SecretsManagerReadWrite            ||
+|+---------------------------------------------------------------------+-------------------------------------+|
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ aws iam get-policy-version \
+  --policy-arn arn:aws:iam::975598471165:policy/liberdade-final-lp-secrets-read01 \
+  --version-id $(aws iam get-policy \
+    --policy-arn arn:aws:iam::975598471165:policy/liberdade-final-lp-secrets-read01 \
+    --query "Policy.DefaultVersionId" \
+    --output text) \
+  --query "PolicyVersion.Document" \
+  --output json
+{
+    "Statement": [
+        {
+            "Action": [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:secretsmanager:sa-east-1:975598471165:secret:liberdade-final/rds/mysql*",
+            "Sid": "ReadOnlyLabSecret"
+        }
+    ],
+    "Version": "2012-10-17"
+}
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ terraform apply \
+  -var="tokyo_tgw_peering_attachment_id=tgw-attach-001ca2046d97cf069" \
+  -var="tokyo_rds_endpoint=shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com" \
+  -var="tokyo_cloudfront_domain_name=d3soab3h6migp9.cloudfront.net" 
+random_password.liberdale_origin_header_value01: Refreshing state... [id=none]
+aws_cloudwatch_log_group.liberdale_waf_log_group01[0]: Refreshing state... [id=aws-waf-logs-liberdade-final-webacl01]
+aws_acm_certificate.liberdale_cf_cert01: Refreshing state... [id=arn:aws:acm:us-east-1:975598471165:certificate/7a117c9f-954e-4bff-8f6e-61312d2bd669]
+aws_wafv2_web_acl.liberdale_waf01[0]: Refreshing state... [id=088aaa53-8db0-47fd-b72f-44073f412b2a]
+aws_wafv2_web_acl.liberdale_cf_waf01: Refreshing state... [id=df290998-4cd2-488d-93b9-cc6b07e3c9bd]
+data.aws_route53_zone.liberdale_existing_zone01: Reading...
+aws_iam_role.liberdale_ec2_role01: Refreshing state... [id=liberdade-final-ec2-role01]
+aws_cloudfront_response_headers_policy.liberdale_rsp_static01: Refreshing state... [id=11a97e73-351a-4d4c-a050-ce3a44c4d6f4]
+aws_acm_certificate.liberdale_acm_cert01: Refreshing state... [id=arn:aws:acm:sa-east-1:975598471165:certificate/c77f1842-c9dd-4e3f-aae9-74db9e01ffda]
+aws_ssm_parameter.liberdale_db_endpoint_param: Refreshing state... [id=/lab/db/endpoint]
+data.aws_caller_identity.liberdale_self01: Reading...
+aws_eip.liberdale_nat_eip01: Refreshing state... [id=eipalloc-0f2731ec8f9241cba]
+aws_cloudfront_origin_request_policy.liberdale_orp_api01: Refreshing state... [id=8a8a9d72-61a8-451b-a876-3c7d474abf4b]
+data.aws_caller_identity.liberdale_self01: Read complete after 0s [id=975598471165]
+aws_ec2_transit_gateway.liberdale_tgw01: Refreshing state... [id=tgw-055c4115682138ae5]
+aws_ssm_parameter.liberdale_db_name_param: Refreshing state... [id=/lab/db/name]
+aws_ec2_transit_gateway_peering_attachment_accepter.liberdale_tgw_peering_accept01: Refreshing state... [id=tgw-attach-001ca2046d97cf069]
+data.aws_route53_zone.liberdale_existing_zone01: Read complete after 2s [id=Z0577510JJCMGIYZ7086]
+aws_cloudfront_cache_policy.liberdale_cache_static01: Refreshing state... [id=4c80443b-1721-4275-ba43-d8c52b20319f]
+aws_ssm_parameter.liberdale_db_port_param: Refreshing state... [id=/lab/db/port]
+aws_cloudfront_cache_policy.liberdale_cache_api_disabled01: Refreshing state... [id=99cadb18-ffc4-48f0-8297-0e1516f57d49]
+data.aws_ec2_managed_prefix_list.liberdale_cf_origin_facing01: Reading...
+aws_sns_topic.liberdale_sns_topic01: Refreshing state... [id=arn:aws:sns:sa-east-1:975598471165:liberdade-final-db-incidents]
+aws_cloudwatch_log_group.liberdale_log_group01: Refreshing state... [id=/aws/ec2/liberdade-final-rds-app]
+data.aws_elb_service_account.main: Reading...
+data.aws_elb_service_account.main: Read complete after 0s [id=507241528517]
+aws_cloudfront_origin_request_policy.liberdale_orp_static01: Refreshing state... [id=9009e52c-dcd9-4162-a11c-9d86a5dfb975]
+aws_vpc.liberdale_vpc01: Refreshing state... [id=vpc-0c90d6182b218c5ae]
+data.aws_region.liberdale_region01: Reading...
+data.aws_region.liberdale_region01: Read complete after 0s [id=sa-east-1]
+aws_route53_record.liberdale_cf_validation["app.firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_s3_bucket.liberdale_alb_logs_bucket01[0]: Refreshing state... [id=liberdade-final-alb-logs-975598471165]
+aws_route53_record.liberdale_cf_validation["firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__7f4672efd368aa32db37ec2fc438f094.firstpointand.click._CNAME]
+aws_iam_role_policy_attachment.liberdale_ec2_ssm_attach: Refreshing state... [id=liberdade-final-ec2-role01/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+aws_iam_instance_profile.liberdale_instance_profile01: Refreshing state... [id=liberdade-final-instance-profile01]
+aws_iam_role_policy_attachment.liberdale_ec2_cw_attach: Refreshing state... [id=liberdade-final-ec2-role01/arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy]
+aws_iam_role_policy_attachment.liberdale_ec2_secrets_attach: Refreshing state... [id=liberdade-final-ec2-role01/arn:aws:iam::aws:policy/SecretsManagerReadWrite]
+aws_route53_record.liberdale_apex_to_cf01[0]: Refreshing state... [id=Z0577510JJCMGIYZ7086_firstpointand.click_A]
+data.aws_ec2_managed_prefix_list.liberdale_cf_origin_facing01: Read complete after 1s [id=pl-5da64334]
+aws_route53_record.liberdale_app_to_cf01[0]: Refreshing state... [id=Z0577510JJCMGIYZ7086_app.firstpointand.click_A]
+aws_route53_record.liberdale_acm_validation["app.firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_route53_record.liberdale_acm_validation_records01["app.firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click._CNAME]
+aws_wafv2_web_acl_logging_configuration.liberdale_waf_logging01[0]: Refreshing state... [id=arn:aws:wafv2:us-east-1:975598471165:global/webacl/liberdade-final-waf01/088aaa53-8db0-47fd-b72f-44073f412b2a]  
+aws_iam_policy.liberdale_leastpriv_read_params01: Refreshing state... [id=arn:aws:iam::975598471165:policy/liberdade-final-lp-ssm-read01]
+aws_ec2_transit_gateway_route.liberdale_tgw_route_to_tokyo01: Refreshing state... [id=tgw-rtb-0c30afb459120b643_10.100.0.0/16]
+aws_cloudwatch_metric_alarm.liberdale_db_alarm01: Refreshing state... [id=liberdade-final-db-connection-failure]
+aws_sns_topic_subscription.liberdale_sns_sub01: Refreshing state... [id=arn:aws:sns:sa-east-1:975598471165:liberdade-final-db-incidents:a03796d1-98ad-4420-a3c9-34b52afee344]
+aws_acm_certificate_validation.liberdale_cf_validation01: Refreshing state... [id=2026-03-26 01:22:12.735 +0000 UTC]
+aws_iam_policy.liberdale_leastpriv_read_secret01: Refreshing state... [id=arn:aws:iam::975598471165:policy/liberdade-final-lp-secrets-read01]
+aws_acm_certificate_validation.liberdale_acm_validation01: Refreshing state... [id=2026-03-26 01:22:15.86 +0000 UTC]
+aws_iam_role_policy_attachment.liberdale_attach_lp_params01: Refreshing state... [id=liberdade-final-ec2-role01/arn:aws:iam::975598471165:policy/liberdade-final-lp-ssm-read01]
+aws_acm_certificate_validation.liberdale_acm_validation01_dns_bonus[0]: Refreshing state... [id=2026-03-26 01:22:15.86 +0000 UTC]       
+aws_iam_role_policy_attachment.liberdale_attach_lp_secret01: Refreshing state... [id=liberdade-final-ec2-role01/arn:aws:iam::975598471165:policy/liberdade-final-lp-secrets-read01]
+aws_iam_policy.liberdale_leastpriv_cwlogs01: Refreshing state... [id=arn:aws:iam::975598471165:policy/liberdade-final-lp-cwlogs01]      
+aws_iam_role_policy_attachment.liberdale_attach_lp_cwlogs01: Refreshing state... [id=liberdade-final-ec2-role01/arn:aws:iam::975598471165:policy/liberdade-final-lp-cwlogs01]
+aws_internet_gateway.liberdale_igw01: Refreshing state... [id=igw-0a657aaa51aef5555]
+aws_subnet.liberdale_private_subnets[0]: Refreshing state... [id=subnet-05e115d0ec65bff8c]
+aws_subnet.liberdale_private_subnets[1]: Refreshing state... [id=subnet-04f14d0096537e8bd]
+aws_security_group.liberdale_vpce_sg01: Refreshing state... [id=sg-004b7baa9dc592ac2]
+aws_security_group.liberdale_alb_sg01: Refreshing state... [id=sg-06909998330abe20c]
+aws_route_table.liberdale_public_rt01: Refreshing state... [id=rtb-05044ceee55f367fe]
+aws_route_table.liberdale_private_rt01: Refreshing state... [id=rtb-012d4a11c675bb7ec]
+aws_lb_target_group.liberdale_tg01: Refreshing state... [id=arn:aws:elasticloadbalancing:sa-east-1:975598471165:targetgroup/liberdade-final-tg01/842ab70e2bdaf6be]
+aws_security_group.liberdale_ec2_sg01: Refreshing state... [id=sg-02464bb4a709848e0]
+aws_subnet.liberdale_public_subnets[0]: Refreshing state... [id=subnet-027b5cf4c8c72c9f1]
+aws_subnet.liberdale_public_subnets[1]: Refreshing state... [id=subnet-0268dbe9ad85b32b5]
+aws_vpc_endpoint.liberdale_vpce_kms01: Refreshing state... [id=vpce-072dd935a4748493f]
+aws_vpc_endpoint.liberdale_vpce_logs01: Refreshing state... [id=vpce-07e503c062bae572a]
+aws_vpc_endpoint.liberdale_vpce_ssmmessages01: Refreshing state... [id=vpce-04f6a5a219d66f735]
+aws_vpc_endpoint.liberdale_vpce_secrets01: Refreshing state... [id=vpce-0d4fdf66ed3e3fa93]
+aws_ec2_transit_gateway_vpc_attachment.liberdale_tgw_vpc_attach01: Refreshing state... [id=tgw-attach-0af8e6f057d44f5d1]
+aws_vpc_endpoint.liberdale_vpce_ec2messages01: Refreshing state... [id=vpce-0d120c028cc0906a1]
+aws_vpc_endpoint.liberdale_vpce_ssm01: Refreshing state... [id=vpce-0c4b17929aa5d9f13]
+aws_route.liberdale_public_default_route: Refreshing state... [id=r-rtb-05044ceee55f367fe1080289494]
+aws_vpc_endpoint.liberdale_vpce_s3_gw01: Refreshing state... [id=vpce-096d763acf4249e26]
+aws_route_table_association.liberdale_private_rta[1]: Refreshing state... [id=rtbassoc-0308b3c111dcaac7e]
+aws_route_table_association.liberdale_private_rta[0]: Refreshing state... [id=rtbassoc-04b8f3bc65f9aedcc]
+aws_security_group_rule.liberdale_alb_ingress_cf44301: Refreshing state... [id=sgrule-3747984554]
+aws_instance.liberdale_ec201: Refreshing state... [id=i-0901ec11844eb54cf]
+aws_security_group_rule.liberdale_vpce_sg01_ingress_https_from_ec2: Refreshing state... [id=sgrule-106400191]
+aws_instance.liberdale_ec201_private_bonus: Refreshing state... [id=i-0ac315ff3c8329c61]
+aws_security_group_rule.liberdale_ec2_ingress_from_alb01: Refreshing state... [id=sgrule-2054250531]
+aws_vpc_security_group_ingress_rule.ingress_22: Refreshing state... [id=sgr-0a10a8cd6ca578de2]
+aws_nat_gateway.liberdale_nat01: Refreshing state... [id=nat-04c691db7002d42a8]
+aws_route_table_association.liberdale_public_rta[1]: Refreshing state... [id=rtbassoc-012bc5b75e3f81ecd]
+aws_route_table_association.liberdale_public_rta[0]: Refreshing state... [id=rtbassoc-0523f663e3f54d165]
+aws_route.liberdale_private_to_tokyo: Refreshing state... [id=r-rtb-012d4a11c675bb7ec373368074]
+aws_lb.liberdale_alb01: Refreshing state... [id=arn:aws:elasticloadbalancing:sa-east-1:975598471165:loadbalancer/app/liberdade-final-alb01/bf89071c83f27106]
+aws_s3_bucket_ownership_controls.liberdale_alb_logs_owner01[0]: Refreshing state... [id=liberdade-final-alb-logs-975598471165]
+aws_s3_bucket_policy.liberdale_alb_logs_policy01[0]: Refreshing state... [id=liberdade-final-alb-logs-975598471165]
+aws_s3_bucket_public_access_block.liberdale_alb_logs_pab01[0]: Refreshing state... [id=liberdade-final-alb-logs-975598471165]
+aws_route.liberdale_private_default_route: Refreshing state... [id=r-rtb-012d4a11c675bb7ec1080289494]
+aws_cloudwatch_dashboard.liberdale_dashboard01: Refreshing state... [id=liberdade-final-dashboard01]
+aws_cloudwatch_metric_alarm.liberdale_alb_5xx_alarm01: Refreshing state... [id=liberdade-final-alb-5xx-alarm01]
+aws_lb_listener.liberdale_http_listener01: Refreshing state... [id=arn:aws:elasticloadbalancing:sa-east-1:975598471165:listener/app/liberdade-final-alb01/bf89071c83f27106/ce87c3e156930540]
+aws_lb_listener.liberdale_https_listener01: Refreshing state... [id=arn:aws:elasticloadbalancing:sa-east-1:975598471165:listener/app/liberdade-final-alb01/bf89071c83f27106/389c95d2606df352]
+aws_lb_listener_rule.liberdale_require_origin_header01: Refreshing state... [id=arn:aws:elasticloadbalancing:sa-east-1:975598471165:listener-rule/app/liberdade-final-alb01/bf89071c83f27106/389c95d2606df352/4e741b65f6bb5089]
+aws_lb_listener_rule.liberdale_default_block01: Refreshing state... [id=arn:aws:elasticloadbalancing:sa-east-1:975598471165:listener-rule/app/liberdade-final-alb01/bf89071c83f27106/389c95d2606df352/017c5a171fc0a93d]
+aws_lb_target_group_attachment.liberdale_tg_attach01: Refreshing state... [id=arn:aws:elasticloadbalancing:sa-east-1:975598471165:targetgroup/liberdade-final-tg01/842ab70e2bdaf6be,i-0ac315ff3c8329c61,80] 
+
+Terraform used the selected providers to generate the following     
+execution plan. Resource actions are indicated with the following   
+symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # aws_route53_record.liberdale_acm_validation_records01["app.firstpointand.click"] will be updated in-place
+  ~ resource "aws_route53_record" "liberdale_acm_validation_records01" {
+        id                               = "Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click._CNAME"      
+        name                             = "_2887c024ef221b96b378e669c909a316.app.firstpointand.click"
+      ~ ttl                              = 60 -> 6
+        # (8 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 1 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+aws_route53_record.liberdale_acm_validation_records01["app.firstpointand.click"]: Modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click._CNAME]
+aws_route53_record.liberdale_acm_validation_records01["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...909a316.app.firstpointand.click._CNAME, 00m10s elapsed]  
+aws_route53_record.liberdale_acm_validation_records01["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...909a316.app.firstpointand.click._CNAME, 00m20s elapsed]  
+aws_route53_record.liberdale_acm_validation_records01["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...909a316.app.firstpointand.click._CNAME, 00m30s elapsed]  
+aws_route53_record.liberdale_acm_validation_records01["app.firstpointand.click"]: Modifications complete after 32s [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+
+Outputs:
+
+alb_dns_name = "liberdade-final-alb01-1823016414.sa-east-1.elb.amazonaws.com"
+alb_sg_id = "sg-06909998330abe20c"
+liberdale_alb_logs_bucket_name = "liberdade-final-alb-logs-975598471165"
+liberdale_apex_url_https = "https://firstpointand.click"
+liberdale_app_url_https = "https://app.firstpointand.click"
+liberdale_ec2_instance_id = "i-0901ec11844eb54cf"
+liberdale_log_group_name = "/aws/ec2/liberdade-final-rds-app"       
+liberdale_origin_header_value = <sensitive>
+liberdale_private_subnet_ids = [
+  "subnet-05e115d0ec65bff8c",
+  "subnet-04f14d0096537e8bd",
+]
+liberdale_public_subnet_ids = [
+  "subnet-027b5cf4c8c72c9f1",
+  "subnet-0268dbe9ad85b32b5",
+]
+liberdale_sns_topic_arn = "arn:aws:sns:sa-east-1:975598471165:liberdade-final-db-incidents"
+liberdale_vpc_id = "vpc-0c90d6182b218c5ae"
+liberdale_waf_log_destination = "cloudwatch"
+saopaulo_tgw_id = "tgw-055c4115682138ae5"
+saopaulo_vpc_cidr = "10.200.0.0/16"
+target_group_arn = "arn:aws:elasticloadbalancing:sa-east-1:975598471165:targetgroup/liberdade-final-tg01/842ab70e2bdaf6be"
+tokyo_rds_endpoint_in_use = "shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com"
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ aws ssm start-session \
+  --target i-0901ec11844eb54cf \
+  --region sa-east-1
+
+Starting session with SessionId: AWSCLI4-9hy2u4z84xoujfrrgoj3453u7u 
+sh-5.2$ curl http://localhost/init
+Init Failed (check TGW route and RDS SG): An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret.sh-5.2$ 
+sh-5.2$ sudo systemctl restart rdsapp
+sleep 10
+curl http://localhost/initsleep 10
+curl http://localhost/init
+sh-5.2$ sleep 15
+curl http://localhost/initsh-5.2$ curl http://localhost/init
+Init OK on Tokyo RDS! <a href='/'>Back</a>sh-5.2$ 
+sh-5.2$ curl -X POST http://localhost/api/records \
+>   -H "Content-Type: application/json" \
+>   -d '{"patient_id": "TEST-SP-001", "note": "Written from Sao Paulo EC2"}'
+{"db":"tokyo-via-tgw","patient_id":"TEST-SP-001","status":"ok","written_by":"sa-east-1"}
+sh-5.2$ sh-5.2$ sudo systemctl restart rdsapp
+sh: sh-5.2$: command not found
+sh-5.2$ sleep 10
+curl http://localhost/initsleep 10
+curl http://localhost/init
+sh-5.2$ sleep 15
+curl http://localhost/initsh-5.2$ curl http://localhost/init
+Init OK on Tokyo RDS! <a href='/'>Back</a>sh-5.2$ 
+sh-5.2$ curl -X POST http://localhost/api/records \
+>   -H "Content-Type: application/json" \
+>   -d '{"patient_id": "TEST-SP-001", "note": "Written from Sao Paulo EC2"}'
+{"db":"tokyo-via-tgw","patient_id":"TEST-SP-001","status":"ok","written_by":"sa-east-1"}
+sh-5.2$ sh-5.2$ curl http://localhost/initsleep 10
+<!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+exit
+^C
+sh-5.2$ exit
+exit
+
+
+Exiting session with sessionId: AWSCLI4-9hy2u4z84xoujfrrgoj3453u7u. 
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ curl "http://shinjuku-final-alb01-2142099596.ap-northeast-1.elb.amazonaws.com/api/records?patient_id=TEST-SP-001"
+curl: (6) Could not resolve host: shinjuku-final-alb01-2142099596.ap-northeast-1.elb.amazonaws.com
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ curl "http://shinjuku-final-alb01-1645860953.ap-northeast-1.elb.amazonaws.com/api/records?patient_id=TEST-SP-001"
+curl: (28) Failed to connect to shinjuku-final-alb01-1645860953.ap-northeast-1.elb.amazonaws.com port 80 after 21309 ms: Could not connect to server
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main) 
+$ aws ssm start-session \
+  --target i-06c081e964ea32537 \
+  --region ap-northeast-1
+
+Starting session with SessionId: AWSCLI4-88dqklabiu6fhbefsidebvru6i 
+$ curl "http://localhost/api/records?patient_id=TEST-SP-001"
+curl: (7) Failed to connect to localhost port 80 after 0 ms: Connection refused
+$ aws ssm start-session \
+>   --target i-06c081e964ea32537 \
+>   --region ap-northeast-1
+sh: 2: aws: not found
+$ sudo systemctl status rdsapp
+Unit rdsapp.service could not be found.
+$ ournalctl -u rdsapp -n 20 --no-pager
+sh: 6: ournalctl: not found
+$ ls /opt/rdsapp/^H^H^H^H^H^H^C
+$ exit
+
+
+Exiting session with sessionId: AWSCLI4-88dqklabiu6fhbefsidebvru6i.
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ ls /opt/rdsapp/
+ls: cannot access '/opt/rdsapp/': No such file or directory
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ssm start-session \
+  --target i-0901ec11844eb54cf \
+  --region sa-east-1
+
+Starting session with SessionId: AWSCLI4-iipeldd3hz56z2syj5p2l432i8
+sh-5.2$ nc -vz shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com 3306
+Ncat: Version 7.93 ( https://nmap.org/ncat )
+Ncat: TIMEOUT.
+sh-5.2$ exit
+exit
+
+
+Exiting session with sessionId: AWSCLI4-iipeldd3hz56z2syj5p2l432i8.
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ec2 describe-transit-gateway-peering-attachments \
+  --region ap-northeast-1 \
+  --query "TransitGatewayPeeringAttachments[].{ID:TransitGatewayAttachmentId,State:State}" \
+  --output table
+
+aws ec2 describe-transit-gateway-peering-attachments \   
+  --region sa-east-1 \
+  --query "TransitGatewayPeeringAttachments[].{ID:TransitGatewayAttachmentId,State:State}" \
+  --output table
+-----------------------------------------------
+|  DescribeTransitGatewayPeeringAttachments   |
++-------------------------------+-------------+
+|              ID               |    State    |
++-------------------------------+-------------+
+|  tgw-attach-001ca2046d97cf069 |  available  |
++-------------------------------+-------------+
+
+-----------------------------------------------
+|  DescribeTransitGatewayPeeringAttachments   |
++-------------------------------+-------------+
+|              ID               |    State    |
++-------------------------------+-------------+
+|  tgw-attach-001ca2046d97cf069 |  available  |
++-------------------------------+-------------+
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ec2 describe-route-tables \
+  --region sa-east-1 \
+  --filters "Name=vpc-id,Values=vpc-0c90d6182b218c5ae" \ 
+  --query "RouteTables[].Routes[?DestinationCidrBlock=='10.100.0.0/16']" \
+  --output json
+[
+    [
+        {
+            "DestinationCidrBlock": "10.100.0.0/16",     
+            "TransitGatewayId": "tgw-055c4115682138ae5", 
+            "Origin": "CreateRoute",
+            "State": "active"
+        }
+    ],
+    [],
+    []
+]
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ssm start-session \
+  --target i-0901ec11844eb54cf \
+  --region sa-east-1
+
+Starting session with SessionId: AWSCLI4-f6cih49pc7l3yaxrnhglsojbk8
+sh-5.2$ nc -vz shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com 3306
+Ncat: Version 7.93 ( https://nmap.org/ncat )
+Ncat: Connected to 10.100.102.43:3306.
+Ncat: 0 bytes sent, 0 bytes received in 0.30 seconds.    
+sh-5.2$ aws ec2 describe-route-tables \
+>   --region sa-east-1 \
+>   --filters "Name=vpc-id,Values=vpc-0c90d6182b218c5ae" \
+>   --query "RouteTables[].Routes[]" \
+>   --output json
+
+An error occurred (UnauthorizedOperation) when calling the DescribeRouteTables operation: You are not authorized to perform this operation. User: arn:aws:sts::975598471165:assumed-role/liberdade-final-ec2-role01/i-0901ec11844eb54cf is not authorized to perform: ec2:DescribeRouteTables because no identity-based policy allows the ec2:DescribeRouteTables action
+sh-5.2$ exit
+exit
+
+
+Exiting session with sessionId: AWSCLI4-f6cih49pc7l3yaxrnhglsojbk8.
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ec2 describe-route-tables \
+  --region sa-east-1 \
+  --filters "Name=vpc-id,Values=vpc-0c90d6182b218c5ae" \ 
+  --query "RouteTables[].Routes[]" \
+  --output json
+[
+    {
+        "DestinationCidrBlock": "10.100.0.0/16",
+        "TransitGatewayId": "tgw-055c4115682138ae5",     
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.200.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": "nat-04c691db7002d42a8",
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationPrefixListId": "pl-6aa54003",        
+        "GatewayId": "vpce-096d763acf4249e26",
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.200.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.200.0.0/16",        
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0a657aaa51aef5555",
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ssm start-session \
+  --target i-0901ec11844eb54cf \
+  --region sa-east-1
+
+Starting session with SessionId: AWSCLI4-j5akxrgdtjialy47vb4bpsg59u
+sh-5.2$ nc -vz shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com 3306
+Ncat: Version 7.93 ( https://nmap.org/ncat )
+Ncat: Connected to 10.100.102.43:3306.
+Ncat: 0 bytes sent, 0 bytes received in 0.30 seconds.
+sh-5.2$
+
+
+

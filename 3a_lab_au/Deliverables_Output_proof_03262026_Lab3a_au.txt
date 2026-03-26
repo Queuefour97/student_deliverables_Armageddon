@@ -1,0 +1,385 @@
+
+Peering is available in both regions:
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ec2 describe-transit-gateway-peering-attachments \
+  --region ap-northeast-1 \
+  --query "TransitGatewayPeeringAttachments[].{ID:TransitGatewayAttachmentId,State:State}" \
+  --output table
+
+aws ec2 describe-transit-gateway-peering-attachments \   
+  --region sa-east-1 \
+  --query "TransitGatewayPeeringAttachments[].{ID:TransitGatewayAttachmentId,State:State}" \
+  --output table
+-----------------------------------------------
+|  DescribeTransitGatewayPeeringAttachments   |
++-------------------------------+-------------+
+|              ID               |    State    |
++-------------------------------+-------------+
+|  tgw-attach-001ca2046d97cf069 |  available  |
++-------------------------------+-------------+
+
+-----------------------------------------------
+|  DescribeTransitGatewayPeeringAttachments   |
++-------------------------------+-------------+
+|              ID               |    State    |
++-------------------------------+-------------+
+|  tgw-attach-001ca2046d97cf069 |  available  |
++-------------------------------+-------------+
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ec2 describe-route-tables \
+  --region sa-east-1 \
+  --filters "Name=vpc-id,Values=vpc-0c90d6182b218c5ae" \ 
+  --query "RouteTables[].Routes[?DestinationCidrBlock=='10.100.0.0/16']" \
+  --output json
+[
+    [
+        {
+            "DestinationCidrBlock": "10.100.0.0/16",     
+            "TransitGatewayId": "tgw-055c4115682138ae5", 
+            "Origin": "CreateRoute",
+            "State": "active"
+        }
+    ],
+    [],
+    []
+]
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+______________________________________________
+Confirm Sao Paulo private route table to confirm the route to Tokyo exists:
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ec2 describe-route-tables \
+  --region sa-east-1 \
+  --filters "Name=vpc-id,Values=vpc-0c90d6182b218c5ae" \ 
+  --query "RouteTables[].Routes[?DestinationCidrBlock=='10.100.0.0/16']" \
+  --output json
+[
+    [
+        {
+            "DestinationCidrBlock": "10.100.0.0/16",     
+            "TransitGatewayId": "tgw-055c4115682138ae5", 
+            "Origin": "CreateRoute",
+            "State": "active"
+        }
+    ],
+    [],
+    []
+]
+_____________________________________________
+ Tokyo side — confirm the route back to Sao Paulo exists:
+aws ec2 describe-route-tables \
+  --region ap-northeast-1 \
+  --filters "Name=vpc-id,Values=vpc-0b9de40ee844fa645" \
+  --query "RouteTables[].Routes[?DestinationCidrBlock=='10.200.0.0/16']" \
+  --output json
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/TheoWaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ aws ec2 describe-route-tables \
+  --region ap-northeast-1 \
+  --filters "Name=vpc-id,Values=vpc-0b9de40ee844fa645" \
+  --query "RouteTables[].Routes[?DestinationCidrBlock=='10.200.0.0/16']" \
+  --output json
+[
+    [],
+    [],
+    [
+        {
+            "DestinationCidrBlock": "10.200.0.0/16",
+            "TransitGatewayId": "tgw-0372e6a6b4b4da24b",
+            "Origin": "CreateRoute",
+            "State": "active"
+        }
+    ]
+]
+
+______________________________________________
+Output tokyo_files/:
+cd tokyo/
+terraform apply \
+  -var="saopaulo_tgw_id=tgw-055c4115682138ae5" \
+  -var="tgw_peering_accepted=true" \
+  -var="ec2_ami_id=ami-088b486f20fab3f0e"
+
+Output:
+alb_dns_name = "shinjuku-final-alb01-1645860953.ap-northeast-1.elb.amazonaws.com"
+alb_sg_id = "sg-0acbb6a01bd13be28"
+cloudfront_distribution_id = "E1MQONXZ6LPX94"
+shinjuku_alb_logs_bucket_name = "shinjuku-final-alb-logs-975598471165"
+shinjuku_apex_url_https = "https://firstpointand.click"
+shinjuku_app_url_https = "https://app.firstpointand.click"
+shinjuku_ec2_instance_id = "i-0471e6059c97cf2e5"
+shinjuku_log_group_name = "/aws/ec2/shinjuku-final-rds-app"
+shinjuku_origin_header_value = <sensitive>
+shinjuku_private_subnet_ids = [
+  "subnet-0fc27a548c818ca93",
+  "subnet-07b96d34b624cb5df",
+]
+shinjuku_public_subnet_ids = [
+  "subnet-0a3ec2949828b4162",
+  "subnet-01896031a79b39a85",
+]
+shinjuku_rds_endpoint = "shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com"
+shinjuku_rds_port = 3306
+shinjuku_route53_zone_id = "Z0577510JJCMGIYZ7086"
+shinjuku_sns_topic_arn = "arn:aws:sns:ap-northeast-1:975598471165:shinjuku-final-db-incidents"
+shinjuku_vpc_id = "vpc-0b9de40ee844fa645"
+shinjuku_waf_log_destination = "cloudwatch"
+target_group_arn = "arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:targetgroup/shinjuku-final-tg01/813df654607557dc"
+tokyo_tgw_id = "tgw-0372e6a6b4b4da24b"
+tokyo_tgw_peering_attachment_id = "tgw-attach-001ca2046d97cf069"
+tokyo_vpc_cidr = "10.100.0.0/16"
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/TheoWaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$
+________________________________________
+aws ec2 describe-security-groups \
+  --region ap-northeast-1 \
+  --filters "Name=group-name,Values=shinjuku-final-rds-sg01" \
+  --query "SecurityGroups[].IpPermissions[?FromPort==\`3306\`]" \
+  --output json
+
+________________________________________
+tokyo_files:
+Outputs:
+
+alb_dns_name = "shinjuku-final-alb01-1645860953.ap-northeast-1.elb.amazonaws.com"
+alb_sg_id = "sg-0acbb6a01bd13be28"
+cloudfront_distribution_id = "E1MQONXZ6LPX94"
+shinjuku_alb_logs_bucket_name = "shinjuku-final-alb-logs-975598471165"
+shinjuku_apex_url_https = "https://firstpointand.click"
+shinjuku_app_url_https = "https://app.firstpointand.click"
+shinjuku_ec2_instance_id = "i-0471e6059c97cf2e5"
+shinjuku_log_group_name = "/aws/ec2/shinjuku-final-rds-app"
+shinjuku_origin_header_value = <sensitive>
+shinjuku_private_subnet_ids = [
+  "subnet-0fc27a548c818ca93",
+  "subnet-07b96d34b624cb5df",
+]
+shinjuku_public_subnet_ids = [
+  "subnet-0a3ec2949828b4162",
+  "subnet-01896031a79b39a85",
+]
+shinjuku_rds_endpoint = "shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com"
+shinjuku_rds_port = 3306
+shinjuku_route53_zone_id = "Z0577510JJCMGIYZ7086"
+shinjuku_sns_topic_arn = "arn:aws:sns:ap-northeast-1:975598471165:shinjuku-final-db-incidents"
+shinjuku_vpc_id = "vpc-0b9de40ee844fa645"
+shinjuku_waf_log_destination = "cloudwatch"
+target_group_arn = "arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:targetgroup/shinjuku-final-tg01/813df654607557dc"
+tokyo_tgw_id = "tgw-0372e6a6b4b4da24b"
+tokyo_tgw_peering_attachment_id = "tgw-attach-001ca2046d97cf069"
+tokyo_vpc_cidr = "10.100.0.0/16"
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ ^C
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ aws ec2 describe-security-groups \
+  --region ap-northeast-1 \
+  --group-ids sg-0f77e84c33db1c83f \
+  --query "SecurityGroups[].IpPermissions[?FromPort==\`3306\`]" \
+  --output json
+[
+    [
+        {
+            "IpProtocol": "tcp",
+            "FromPort": 3306,
+            "ToPort": 3306,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "MySQL from Tokyo EC2",
+                    "UserId": "975598471165",
+                    "GroupId": "sg-05b82ae1d94f2d579"
+                }
+            ],
+            "IpRanges": [
+                {
+                    "Description": "Allow MySQL from Sao Paulo VPC via TGW Lab 3A cross-region",
+                    "CidrIp": "10.200.0.0/16"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+        }
+    ]
+]
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$
+___________________________________________
+Quick verification commands (so they can prove it)
+From São Paulo EC2 (SSM session)
+
+Test network reachability to Tokyo RDS:
+
+    nc -vz <tokyo-rds-endpoint> 3306
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ssm start-session \
+  --target i-0901ec11844eb54cf \
+  --region sa-east-1
+
+Starting session with SessionId: AWSCLI4-f6cih49pc7l3yaxrnhglsojbk8
+sh-5.2$ nc -vz shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com 3306
+Ncat: Version 7.93 ( https://nmap.org/ncat )
+Ncat: Connected to 10.100.102.43:3306.
+Ncat: 0 bytes sent, 0 bytes received in 0.30 seconds.    
+sh-5.2$ 
+_________________________________________
+Confirm routes (AWS CLI)
+For each region, verify route tables include the cross-region CIDR to TGW:
+
+    aws ec2 describe-route-tables --filters "Name=vpc-id,Values=<VPC_ID>" --query "RouteTables[].Routes[]"
+
+sao_paulo:
+aws ec2 describe-route-tables \
+  --region sa-east-1 \
+  --filters "Name=vpc-id,Values=vpc-0c90d6182b218c5ae" \
+  --query "RouteTables[].Routes[]" \
+  --output json
+
+sao_paulo_files output:
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ec2 describe-route-tables \
+  --region sa-east-1 \
+  --filters "Name=vpc-id,Values=vpc-0c90d6182b218c5ae" \ 
+  --query "RouteTables[].Routes[]" \
+  --output json
+[
+    {
+        "DestinationCidrBlock": "10.100.0.0/16",
+        "TransitGatewayId": "tgw-055c4115682138ae5",     
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.200.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": "nat-04c691db7002d42a8",
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationPrefixListId": "pl-6aa54003",        
+        "GatewayId": "vpce-096d763acf4249e26",
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.200.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.200.0.0/16",        
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0a657aaa51aef5555",
+        "Origin": "CreateRoute",
+        "State": "active"
+    }
+]
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$___________________________________________
+tokyo_files/ output:
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ aws ec2 describe-route-tables \
+  --region ap-northeast-1 \
+  --filters "Name=vpc-id,Values=vpc-0b9de40ee844fa645" \
+  --query "RouteTables[].Routes[]" \
+  --output json
+[
+    {
+        "DestinationCidrBlock": "10.100.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.100.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-002918abe479efb78",
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.100.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.200.0.0/16",
+        "TransitGatewayId": "tgw-0372e6a6b4b4da24b",
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": "nat-07644fcd7e6b05aea",
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationPrefixListId": "pl-61a54008",
+        "GatewayId": "vpce-08a2d486df47c0d7a",
+        "Origin": "CreateRoute",
+        "State": "active"
+    }
+]
+
+
+___________________________________________
+Tokyo (ap-northeast-1)
+
+10.200.0.0/16 → tgw-0372e6a6b4b4da24b — route to Sao Paulo via Tokyo TGW ✅
+10.100.0.0/16 → local — local VPC traffic ✅
+0.0.0.0/0 → NAT — outbound internet via NAT ✅
+
+Sao Paulo (sa-east-1)
+
+10.100.0.0/16 → tgw-055c4115682138ae5 — route to Tokyo via Sao Paulo TGW ✅
+10.200.0.0/16 → local — local VPC traffic ✅
+0.0.0.0/0 → NAT — outbound internet via NAT ✅
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/sao_paulo_files (main)
+$ aws ssm start-session \
+  --target i-0901ec11844eb54cf \
+  --region sa-east-1
+
+
+Running the test to prove that the Sao Paulo EC2 can reach Tokyo RDS through the TGW. 
+Note: It must be run from inside the Sao Paulo instance.
+Starting session with SessionId: AWSCLI4-j5akxrgdtjialy47vb4bpsg59u
+sh-5.2$ nc -vz shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com 3306
+Ncat: Version 7.93 ( https://nmap.org/ncat )
+Ncat: Connected to 10.100.102.43:3306.
+Ncat: 0 bytes sent, 0 bytes received in 0.30 seconds.    
+sh-5.2$ 
+
+This proves:Ncat: Connected to 10.100.102.43:3306 — TGW corridor is working again.
+Connected to private IP 10.100.102.43 (Tokyo VPC range) confirming traffic is flowing over the AWS private backbone via TGW, not the public internet.

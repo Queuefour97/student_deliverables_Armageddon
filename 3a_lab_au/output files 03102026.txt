@@ -1,0 +1,107 @@
+cd saopaulo/
+terraform apply \
+  -var="tokyo_tgw_peering_attachment_id=tgw-attach-0757d6d3816e1ca21" \
+  -var="tokyo_rds_endpoint=shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com" \
+  -var="tokyo_cloudfront_domain_name=d3ccuk0gv0dfex.cloudfront.net"
+
+
+After this, go to AWS Console → VPC → Transit Gateway Peering Attachments in sa-east-1 and confirm status is Available.
+
+ nc -vz <tokyo-rds-endpoint> 3306
+
+ nc -vz shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com 3306
+
+
+Confirm routes (AWS CLI)
+For each region, verify route tables include the cross-region CIDR to TGW:
+
+    aws ec2 describe-route-tables --filters "Name=vpc-id,Values=vpc-022d7725ee614352b" --query "RouteTables[].Routes[]"
+
+aws ec2 describe-route-tables --filters "Name=vpc-id,Values=vpc-0eab03b92b64f47e5" --query "RouteTables[].Routes[]"
+
+shinjuku_vpc_id = "vpc-0eab03b92b64f47e5"
+
+
+
+1) How should São Paulo Terraform change once TGW is established?
+
+
+"ready for Lab 3B"
+
+Find: Grand marquis 2007 124000 millas
+$5,000
+
+
+aws s3 rm s3://liberdade-final-alb-logs-975598471165 --recursive --region sa-east-1
+aws s3 rm s3://shinjuku-final-alb-logs-975598471165 --recursive --region ap-northeast-1
+
+liberdale_vpc_id = "vpc-022d7725ee614352b"
+
+Explain in 8–12 lines: “Why this design is safe from an APPI perspective, and why the DB cannot be placed overseas.”
+
+
+___________________________________________________________
+03/10/2026
+
+Note: To get to this point: RUN terraform init -> terraform validate -> terraform plan -> terraform apply -target=aws_ec2_transit_gateway.liberdale_tgw01 (NOT just terraform apply -> not yet for the full apply)
+
+sao_paulo:
+saopaulo_tgw_id = "tgw-0d0c0b7910d303ec9"
+
+
+Tokyo 03/10/2026:
+terraform apply -var="saopaulo_tgw_id=tgw-0d0c0b7910d303ec9"
+
+tokyo_tgw_peering_attachment_id = "tgw-attach-0c0ed468e648d69ac"
+shinjuku_rds_endpoint           = "shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com"
+cloudfront_domain_name          = "d1kucxetkz0k22.cloudfront.net"
+tokyo_vpc_cidr                  = "10.100.0.0/16"
+tokyo_tgw_id                    = "tgw-0546835d2d5f45b3c"
+
+Tokyo 03/10/2026:
+Outputs:
+
+alb_dns_name = "shinjuku-final-alb01-457019929.ap-northeast-1.elb.amazonaws.com"    
+alb_sg_id = "sg-06780e892fac4c19d"
+cloudfront_distribution_id = "E3QGZWEEDVD25N"
+shinjuku_alb_logs_bucket_name = "shinjuku-final-alb-logs-975598471165"
+shinjuku_apex_url_https = "https://firstpointand.click"
+shinjuku_app_url_https = "https://app.firstpointand.click"
+shinjuku_ec2_instance_id = "i-05c7ffbcf2ff75090"
+shinjuku_log_group_name = "/aws/ec2/shinjuku-final-rds-app"
+shinjuku_origin_header_value = <sensitive>
+shinjuku_private_subnet_ids = [
+  "subnet-0d5129e6bdc92d68f",
+  "subnet-0fafdf0f44b96593a",
+]
+shinjuku_public_subnet_ids = [
+  "subnet-0baf10c89dc09a304",
+  "subnet-0a3ca6960d5d595f0",
+]
+shinjuku_rds_endpoint = "shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com"
+shinjuku_rds_port = 3306
+shinjuku_route53_zone_id = "Z0577510JJCMGIYZ7086"
+shinjuku_sns_topic_arn = "arn:aws:sns:ap-northeast-1:975598471165:shinjuku-final-db-incidents"
+shinjuku_vpc_id = "vpc-07d13b089c6d602f6"
+shinjuku_waf_log_destination = "cloudwatch"
+target_group_arn = "arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:targetgroup/shinjuku-final-tg01/6f48be9e9c988e4e"
+tokyo_tgw_id = "tgw-0546835d2d5f45b3c"
+tokyo_tgw_peering_attachment_id = "tgw-attach-0c0ed468e648d69ac"
+tokyo_vpc_cidr = "10.100.0.0/16"
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ aws cloudfront list-distributions \
+  --query "DistributionList.Items[*].{ID:Id,Domain:DomainName}" \
+  --output table --region us-east-1
+-----------------------------------------------------
+|                 ListDistributions                 |
++--------------------------------+------------------+
+|             Domain             |       ID         |
++--------------------------------+------------------+
+|  d2bk61akfzap4b.cloudfront.net |  E18ZG1CDXH524N  |
+|  d1kucxetkz0k22.cloudfront.net |  E3QGZWEEDVD25N  |
++--------------------------------+------------------+
+
+
+
+
