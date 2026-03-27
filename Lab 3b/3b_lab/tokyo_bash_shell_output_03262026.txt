@@ -1,0 +1,789 @@
+Tokyo bash:
+
+jorun@Simpkij3421 MINGW64 /
+$ cd c:
+
+jorun@Simpkij3421 MINGW64 /c
+$ cd users
+
+jorun@Simpkij3421 MINGW64 /c/users
+$ cd jorun
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun
+$ cd theowaf
+bash: cd: theowaf: No such file or directory
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun
+$ cd documents
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents
+$ cd theowaf
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf
+$ ls -al
+total 89
+drwxr-xr-x 1 jorun 197611     0 Mar 22 20:42  ./
+drwxr-xr-x 1 jorun 197611     0 Nov 12 14:16  ../
+-rw-r--r-- 1 jorun 197611  1506 Oct 21 22:27  5-route.tf
+drwxr-xr-x 1 jorun 197611     0 Mar 13 19:32 'GCP Software Fixes'/
+-rw-r--r-- 1 jorun 197611 13779 Oct 26 14:23  Image20251026142320.png
+-rw-r--r-- 1 jorun 197611  9174 Oct 26 14:23  Image20251026142344.jpg
+-rw-r--r-- 1 jorun 197611 10277 Oct 26 14:23  Image20251026142352.jpg
+drwxr-xr-x 1 jorun 197611     0 Mar 12 15:17  Logs/
+drwxr-xr-x 1 jorun 197611     0 Jan 24 17:50  armageddon/
+drwxr-xr-x 1 jorun 197611     0 Oct 31 22:11  class7/
+drwxr-xr-x 1 jorun 197611     0 Mar 21 12:43  class7.5/
+drwxr-xr-x 1 jorun 197611     0 Mar 22 20:42  class7_5/
+drwxr-xr-x 1 jorun 197611     0 Mar 12 15:00  class8/
+drwxr-xr-x 1 jorun 197611     0 Sep 27 18:00  file-practice/
+drwxr-xr-x 1 jorun 197611     0 Jan 28 21:53 'knowledge to keep'/
+drwxr-xr-x 1 jorun 197611     0 Dec 13 14:30  s3-lab-example/
+-rw-r--r-- 1 jorun 197611   434 Nov  2 14:13  sampleEC2.tf
+drwxr-xr-x 1 jorun 197611     0 Oct 20 22:37  terraform-ubuntu-nginx/
+drwxr-xr-x 1 jorun 197611     0 Sep 27 17:58  test-folder-pics/
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf
+$ dc armageddon
+bash: dc: command not found
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf
+$ d armageddon
+bash: d: command not found
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf
+$ cd armageddon
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon
+$ ls -a
+ ./
+ ../
+ 01082026_armageddon_deliverables.docx
+'Armageddon Script Testing In BASH lab 1a 01102026.docx'
+'AutoRecovery save of Document5.docx'
+'Lab 1b'/
+'Modified Lab1.a Walkthrough.md'
+'Sunday 01112026 Notes Sreenshots.docx'
+ armageddon_01182026sun_notes.txt
+ armageddon_repo/
+'bash screen print 01192026.docx'
+ instance.json
+'lab 1b questions and answers 01172026.txt'
+'lab1a notes 01192026.docx'
+'lab1b Notes.txt'
+ lab1b_sat_011726.docx
+ rds.json
+'resource aws_security_group armaged.txt'
+ role-policies.json
+ secret.json
+ sg.json
+'~$b1b_sat_011726.docx'
+'~WRL2492.tmp'
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon
+$ cd armageddon_repo
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo (main)
+$ ls -a
+ ./
+ ../
+ .git/
+ .gitignore
+ 01082026_armageddon_deliverables.docx
+'Armageddon Script Testing In BASH lab 1a 01102026.docx'
+'Armageddon laba build notes 01052026 Monday.docx'
+'Sunday 01112026 Notes Sreenshots.docx'
+ armageddon_clone/
+ instance.json
+ rds.json
+ role-policies.json
+ secret.json
+ sg.json
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo (main)
+$ cd armageddon_clone
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone (main)
+$ ls -a
+ ./                               3a_lab_a/
+ ../                              3a_lab_au/
+'03082026 3a lab au notes.docx'   3b_lab/
+'03282026 3A Lab'/               'Do Not Submit Query Keep'/
+ 1c_bonus_A/                     'Lab 2_2a'/
+ 1c_bonus_B/                     'New folder'/
+ 1c_bonus_C/                      armageddon/
+ 1c_bonus_D/                      lab2_2a/
+ 1c_bonus_E/                      lab2_2b/
+ 1c_bonus_F/                      lab2_BAM_A.docx
+ 2b_BAM_A_fresh/                  lab2_BAM_B.docx
+ 2b_BAM_b/                        syllabus/
+ 2b_be_a_man_a/                   terraform_armageddon/
+ 3a_lab/                         'to start all over'/
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone (main)
+$ cd 3b_lab_au
+bash: cd: 3b_lab_au: No such file or directory
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone (main)
+$ cd 3a_lab_au
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au (main)
+$ ls -a
+ ./
+ ../
+'3a lab deliverables.docx'
+'Output proof 03262026.txt'
+'lab 3a readme.md'
+ lab3a_runbook.docx
+ lab3a_session_changes_keep_this_file_donotturnin.docx
+'lab3a_verification_report deliverables.docx'
+ mnt/
+'old files'/
+'output files 03102026.txt'
+ sao_paulo_files/
+ tokyo_files/
+'~$b3a_session_changes_keep_this_file_donotturnin.docx'
+'~$b3a_verification_report deliverables.docx'
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au (main)
+$ cd tokyo_files
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ ls -al
+total 640
+drwxr-xr-x 1 jorun 197611      0 Mar 26 01:13 ./
+drwxr-xr-x 1 jorun 197611      0 Mar 26 01:00 ../
+drwxr-xr-x 1 jorun 197611      0 Mar  8 22:24 .terraform/
+-rw-r--r-- 1 jorun 197611   2486 Mar  8 22:25 .terraform.lock.hcl
+-rw-r--r-- 1 jorun 197611 241078 Mar 26 01:13 terraform.tfstate
+-rw-r--r-- 1 jorun 197611 241078 Mar 26 01:12 terraform.tfstate.backup
+-rw-r--r-- 1 jorun 197611   4827 Mar  8 21:39 tokyo_alb_logs_s3.tf
+-rw-r--r-- 1 jorun 197611  11870 Mar  8 22:11 tokyo_alb_waf_monitoring.tf
+-rw-r--r-- 1 jorun 197611   1214 Mar  8 21:39 tokyo_cloudfront_acm.tf
+-rw-r--r-- 1 jorun 197611   5761 Mar  8 21:39 tokyo_cloudfront_cache_policies.tf
+-rw-r--r-- 1 jorun 197611   3879 Mar  8 21:39 tokyo_cloudfront_distribution.tf
+-rw-r--r-- 1 jorun 197611   3448 Mar  8 21:39 tokyo_cloudfront_invalidation.tf
+-rw-r--r-- 1 jorun 197611    558 Mar  8 21:39 tokyo_cloudfront_invalidation_action.tf
+-rw-r--r-- 1 jorun 197611   2222 Mar  8 21:39 tokyo_cloudfront_origin_cloaking.tf
+-rw-r--r-- 1 jorun 197611   2936 Mar  8 21:39 tokyo_cloudfront_origin_driven.tf
+-rw-r--r-- 1 jorun 197611   1010 Mar  8 21:39 tokyo_cloudfront_r53.tf
+-rw-r--r-- 1 jorun 197611   1257 Mar  8 21:39 tokyo_cloudfront_waf.tf
+-rw-r--r-- 1 jorun 197611  13859 Mar  9 22:37 tokyo_main.tf
+-rw-r--r-- 1 jorun 197611   3701 Mar  8 21:39 tokyo_outputs.tf
+-rw-r--r-- 1 jorun 197611    520 Mar  8 21:39 tokyo_providers.tf
+-rw-r--r-- 1 jorun 197611   1003 Mar  8 21:39 tokyo_rds_sg_saopaulo_rule.tf
+-rw-r--r-- 1 jorun 197611   2008 Mar  8 22:11 tokyo_route53.tf
+-rw-r--r-- 1 jorun 197611   1323 Mar  8 21:39 tokyo_routes.tf
+-rw-r--r-- 1 jorun 197611   4014 Mar  9 22:37 tokyo_tgw.tf
+-rw-r--r-- 1 jorun 197611   4040 Mar 25 23:52 tokyo_variables.tf
+-rw-r--r-- 1 jorun 197611   9852 Mar  8 22:11 tokyo_vpc_endpoints.tf
+-rw-r--r-- 1 jorun 197611   6155 Mar  8 21:39 tokyo_waf_logging.tf
+-rwxr-xr-x 1 jorun 197611   8722 Mar 10 18:58 user_data.sh*
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ terraform apply \
+  -var="saopaulo_tgw_id=tgw-055c4115682138ae5" \
+  -var="tgw_peering_accepted=true" \
+  -var="ec2_ami_id=ami-088b486f20fab3f0e"
+random_password.shinjuku_origin_header_value01: Refreshing state... [id=none]
+aws_cloudwatch_log_group.shinjuku_waf_log_group01[0]: Refreshing state... [id=aws-waf-logs-shinjuku-final-webacl01]
+aws_acm_certificate.shinjuku_cf_cert01: Refreshing state... [id=arn:aws:acm:us-east-1:975598471165:certificate/798d1779-da77-4b2c-b262-2e072069f00c]
+aws_wafv2_web_acl.shinjuku_waf01[0]: Refreshing state... [id=944deb41-92c4-49ac-8f0d-775c490d775e]
+aws_wafv2_web_acl.shinjuku_cf_waf01: Refreshing state... [id=55933ab9-a596-4d21-bec0-b3692446a9e1]
+data.aws_elb_service_account.main: Reading...
+data.aws_ec2_managed_prefix_list.shinjuku_cf_origin_facing01: Reading...
+data.aws_region.shinjuku_region01: Reading...
+aws_vpc.shinjuku_vpc01: Refreshing state... [id=vpc-0b9de40ee844fa645]
+aws_cloudfront_origin_request_policy.shinjuku_orp_api01: Refreshing state... [id=1eb39008-4529-46ee-b3aa-a7e6fe18129d]
+aws_ssm_parameter.shinjuku_db_name_param: Refreshing state... [id=/lab/db/name]
+aws_cloudfront_cache_policy.shinjuku_cache_static01: Refreshing state... [id=96f884fc-c5ef-434a-98d7-1a969cefc458]
+aws_cloudfront_cache_policy.shinjuku_cache_api_disabled01: Refreshing state... [id=1c4a9eb2-684e-46e6-a9d1-d10c5ba41700]
+data.aws_elb_service_account.main: Read complete after 0s [id=582318560864]
+data.aws_region.shinjuku_region01: Read complete after 0s [id=ap-northeast-1]
+aws_iam_role.shinjuku_ec2_role01: Refreshing state... [id=shinjuku-final-ec2-role01]
+aws_sns_topic.shinjuku_sns_topic01: Refreshing state... [id=arn:aws:sns:ap-northeast-1:975598471165:shinjuku-final-db-incidents]
+aws_acm_certificate.shinjuku_acm_cert01: Refreshing state... [id=arn:aws:acm:ap-northeast-1:975598471165:certificate/914ddeec-0b91-4cb6-9e9d-0bed79f819d2]
+aws_eip.shinjuku_nat_eip01: Refreshing state... [id=eipalloc-01aebba8661d707e8]
+data.aws_caller_identity.shinjuku_self01: Reading...
+data.aws_route53_zone.shinjuku_existing_zone01: Reading...
+data.aws_caller_identity.shinjuku_self01: Read complete after 0s [id=975598471165]
+aws_cloudwatch_log_group.shinjuku_log_group01: Refreshing state... [id=/aws/ec2/shinjuku-final-rds-app]
+data.aws_route53_zone.shinjuku_existing_zone01: Read complete after 0s [id=Z0577510JJCMGIYZ7086]
+aws_cloudfront_response_headers_policy.shinjuku_rsp_static01: Refreshing state... [id=70b24d46-925d-48be-b61b-a87092d0d164]
+aws_secretsmanager_secret.shinjuku_db_secret01: Refreshing state... [id=arn:aws:secretsmanager:ap-northeast-1:975598471165:secret:shinjuku-final/rds/mysql1-Ud6iv9]
+aws_ec2_transit_gateway.shinjuku_tgw01: Refreshing state... [id=tgw-0372e6a6b4b4da24b]
+aws_cloudfront_origin_request_policy.shinjuku_orp_static01: Refreshing state... [id=9b5e1a85-7518-4c4c-b40c-2dc07e516269]
+data.aws_ec2_managed_prefix_list.shinjuku_cf_origin_facing01: Read complete after 1s [id=pl-58a04531]
+aws_iam_role_policy_attachment.shinjuku_ec2_ssm_attach: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+aws_iam_instance_profile.shinjuku_instance_profile01: Refreshing state... [id=shinjuku-final-instance-profile01]
+aws_iam_role_policy_attachment.shinjuku_ec2_secrets_attach: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::aws:policy/SecretsManagerReadWrite]
+aws_iam_role_policy_attachment.shinjuku_ec2_cw_attach: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy]
+aws_s3_bucket.shinjuku_alb_logs_bucket01[0]: Refreshing state... [id=shinjuku-final-alb-logs-975598471165]
+aws_iam_policy.shinjuku_leastpriv_read_params01: Refreshing state... [id=arn:aws:iam::975598471165:policy/shinjuku-final-lp-ssm-read01]
+aws_route53_record.shinjuku_cf_validation["app.firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_route53_record.shinjuku_cf_validation["firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__7f4672efd368aa32db37ec2fc438f094.firstpointand.click._CNAME]
+aws_sns_topic_subscription.shinjuku_sns_sub01: Refreshing state... [id=arn:aws:sns:ap-northeast-1:975598471165:shinjuku-final-db-incidents:dd42762c-2654-47bc-a2a4-3431e1ae282c]
+aws_cloudwatch_metric_alarm.shinjuku_db_alarm01: Refreshing state... [id=shinjuku-final-db-connection-failure]
+aws_route53_record.shinjuku_acm_validation["app.firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_ec2_transit_gateway_peering_attachment.shinjuku_tgw_peering01: Refreshing state... [id=tgw-attach-001ca2046d97cf069]
+aws_iam_policy.shinjuku_leastpriv_read_secret01: Refreshing state... [id=arn:aws:iam::975598471165:policy/shinjuku-final-lp-secrets-read01]
+aws_route53_record.shinjuku_acm_validation_records01["app.firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_iam_policy.shinjuku_leastpriv_cwlogs01: Refreshing state... [id=arn:aws:iam::975598471165:policy/shinjuku-final-lp-cwlogs01]
+aws_iam_role_policy_attachment.shinjuku_attach_lp_params01: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::975598471165:policy/shinjuku-final-lp-ssm-read01]
+aws_acm_certificate_validation.shinjuku_cf_validation01: Refreshing state... [id=2026-03-26 00:27:22.742 +0000 UTC]
+aws_acm_certificate_validation.shinjuku_acm_validation01: Refreshing state... [id=2026-03-26 00:27:24.61 +0000 UTC]
+aws_iam_role_policy_attachment.shinjuku_attach_lp_secret01: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::975598471165:policy/shinjuku-final-lp-secrets-read01]
+aws_acm_certificate_validation.shinjuku_acm_validation01_dns_bonus[0]: Refreshing state... [id=2026-03-26 00:27:24.61 +0000 UTC]
+aws_iam_role_policy_attachment.shinjuku_attach_lp_cwlogs01: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::975598471165:policy/shinjuku-final-lp-cwlogs01]
+aws_ec2_transit_gateway_route.shinjuku_tgw_route_to_saopaulo01[0]: Refreshing state... [id=tgw-rtb-0a5bf5f4167f1a75f_10.200.0.0/16]
+aws_internet_gateway.shinjuku_igw01: Refreshing state... [id=igw-002918abe479efb78]
+aws_subnet.shinjuku_public_subnets[0]: Refreshing state... [id=subnet-0a3ec2949828b4162]
+aws_security_group.shinjuku_alb_sg01: Refreshing state... [id=sg-0acbb6a01bd13be28]
+aws_lb_target_group.shinjuku_tg01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:targetgroup/shinjuku-final-tg01/813df654607557dc]
+aws_security_group.shinjuku_ec2_sg01: Refreshing state... [id=sg-05b82ae1d94f2d579]
+aws_subnet.shinjuku_public_subnets[1]: Refreshing state... [id=subnet-01896031a79b39a85]
+aws_subnet.shinjuku_private_subnets[0]: Refreshing state... [id=subnet-0fc27a548c818ca93]
+aws_subnet.shinjuku_private_subnets[1]: Refreshing state... [id=subnet-07b96d34b624cb5df]
+aws_route_table.shinjuku_public_rt01: Refreshing state... [id=rtb-0ebbe09e8741a1d67]
+aws_route_table.shinjuku_private_rt01: Refreshing state... [id=rtb-0d70451d36e7a32b9]
+aws_security_group.shinjuku_vpce_sg01: Refreshing state... [id=sg-011279c06fd1d623b]
+aws_security_group_rule.shinjuku_ec2_ingress_from_alb01: Refreshing state... [id=sgrule-1443953089]
+aws_security_group_rule.shinjuku_alb_ingress_cf44301: Refreshing state... [id=sgrule-2609328376]
+aws_security_group.shinjuku_rds_sg01: Refreshing state... [id=sg-0f77e84c33db1c83f]
+aws_vpc_security_group_ingress_rule.ingress_22: Refreshing state... [id=sgr-0796c311e4cdae2bd]
+aws_nat_gateway.shinjuku_nat01: Refreshing state... [id=nat-07644fcd7e6b05aea]
+aws_instance.shinjuku_ec201: Refreshing state... [id=i-0471e6059c97cf2e5]
+aws_ec2_transit_gateway_vpc_attachment.shinjuku_tgw_vpc_attach01: Refreshing state... [id=tgw-attach-031dad7a86e912836]
+aws_db_subnet_group.shinjuku_rds_subnet_group01: Refreshing state... [id=shinjuku-final-rds-subnet-group01]
+aws_route.shinjuku_public_default_route: Refreshing state... [id=r-rtb-0ebbe09e8741a1d671080289494]
+aws_instance.shinjuku_ec201_private_bonus: Refreshing state... [id=i-082f91f709ae43e7d]
+aws_route_table_association.shinjuku_public_rta[0]: Refreshing state... [id=rtbassoc-07a1464ee0490d05c]
+aws_route_table_association.shinjuku_public_rta[1]: Refreshing state... [id=rtbassoc-011dc761cd6b9ea8e]
+aws_route_table_association.shinjuku_private_rta[0]: Refreshing state... [id=rtbassoc-0fc1a360d3f83d978]
+aws_route_table_association.shinjuku_private_rta[1]: Refreshing state... [id=rtbassoc-0fc2c894bc3f69dad]
+aws_vpc_endpoint.shinjuku_vpce_s3_gw01: Refreshing state... [id=vpce-08a2d486df47c0d7a]
+aws_vpc_endpoint.shinjuku_vpce_kms01: Refreshing state... [id=vpce-0785ca5f4bcda0a66]
+aws_vpc_endpoint.shinjuku_vpce_ssmmessages01: Refreshing state... [id=vpce-0c78e091ce5ce96c5]
+aws_vpc_endpoint.shinjuku_vpce_ec2messages01: Refreshing state... [id=vpce-0d869e0f57958b991]
+aws_security_group_rule.shinjuku_vpce_sg01_ingress_https_from_ec2: Refreshing state... [id=sgrule-3100816824]
+aws_vpc_endpoint.shinjuku_vpce_ssm01: Refreshing state... [id=vpce-0444ff9409ec375ee]
+aws_vpc_endpoint.shinjuku_vpce_secrets01: Refreshing state... [id=vpce-0d3a897d4cdf51f34]
+aws_vpc_endpoint.shinjuku_vpce_logs01: Refreshing state... [id=vpce-095cde5e97d87ced4]
+aws_security_group_rule.shinjuku_rds_ingress_from_saopaulo: Refreshing state... [id=sgrule-176767296]
+aws_route.shinjuku_private_default_route: Refreshing state... [id=r-rtb-0d70451d36e7a32b91080289494]
+aws_wafv2_web_acl_logging_configuration.shinjuku_waf_logging01[0]: Refreshing state... [id=arn:aws:wafv2:us-east-1:975598471165:global/webacl/shinjuku-final-waf01/944deb41-92c4-49ac-8f0d-775c490d775e]
+aws_route.shinjuku_private_to_saopaulo: Refreshing state... [id=r-rtb-0d70451d36e7a32b94252409353]
+aws_db_instance.shinjuku_rds01: Refreshing state... [id=db-GHRRMW3TSZMQL2QX2PORABJ3CM]
+aws_lb.shinjuku_alb01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:loadbalancer/app/shinjuku-final-alb01/69bd91fc20d9a734]
+aws_s3_bucket_ownership_controls.shinjuku_alb_logs_owner01[0]: Refreshing state... [id=shinjuku-final-alb-logs-975598471165]
+aws_s3_bucket_policy.shinjuku_alb_logs_policy01[0]: Refreshing state... [id=shinjuku-final-alb-logs-975598471165]
+aws_s3_bucket_public_access_block.shinjuku_alb_logs_pab01[0]: Refreshing state... [id=shinjuku-final-alb-logs-975598471165]
+aws_ssm_parameter.shinjuku_db_port_param: Refreshing state... [id=/lab/db/port]
+aws_ssm_parameter.shinjuku_db_endpoint_param: Refreshing state... [id=/lab/db/endpoint]
+aws_secretsmanager_secret_version.shinjuku_db_secret_version01: Refreshing state... [id=arn:aws:secretsmanager:ap-northeast-1:975598471165:secret:shinjuku-final/rds/mysql1-Ud6iv9|terraform-20260326003324632100000010]
+aws_cloudwatch_dashboard.shinjuku_dashboard01: Refreshing state... [id=shinjuku-final-dashboard01]
+aws_cloudwatch_metric_alarm.shinjuku_alb_5xx_alarm01: Refreshing state... [id=shinjuku-final-alb-5xx-alarm01]
+aws_lb_listener.shinjuku_https_listener01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:listener/app/shinjuku-final-alb01/69bd91fc20d9a734/2bf07c0a435e87bc]
+aws_lb_listener.shinjuku_http_listener01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:listener/app/shinjuku-final-alb01/69bd91fc20d9a734/15398fcc299ab1a2]
+aws_cloudfront_distribution.shinjuku_cf01: Refreshing state... [id=E1MQONXZ6LPX94]
+aws_lb_target_group_attachment.shinjuku_tg_attach01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:targetgroup/shinjuku-final-tg01/813df654607557dc,i-082f91f709ae43e7d,80]
+aws_route53_record.shinjuku_apex_to_cf02: Refreshing state... [id=Z0577510JJCMGIYZ7086_firstpointand.click_A]
+aws_route53_record.shinjuku_app_to_cf02: Refreshing state... [id=Z0577510JJCMGIYZ7086_app.firstpointand.click_A]
+aws_lb_listener_rule.shinjuku_require_origin_header01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:listener-rule/app/shinjuku-final-alb01/69bd91fc20d9a734/2bf07c0a435e87bc/80e4ac454cbc4b76]
+aws_lb_listener_rule.shinjuku_default_block01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:listener-rule/app/shinjuku-final-alb01/69bd91fc20d9a734/2bf07c0a435e87bc/fd353b9ddddd1eab]
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # aws_route53_record.shinjuku_acm_validation["app.firstpointand.click"] will be updated in-place
+  ~ resource "aws_route53_record" "shinjuku_acm_validation" {
+        id                               = "Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME"
+        name                             = "_2887c024ef221b96b378e669c909a316.app.firstpointand.click"
+      ~ ttl                              = 6 -> 60
+        # (8 unchanged attributes hidden)
+    }
+
+  # aws_route53_record.shinjuku_cf_validation["app.firstpointand.click"] will be updated in-place
+  ~ resource "aws_route53_record" "shinjuku_cf_validation" {
+        id                               = "Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME"
+        name                             = "_2887c024ef221b96b378e669c909a316.app.firstpointand.click"
+      ~ ttl                              = 6 -> 60
+        # (8 unchanged attributes hidden)
+    }
+
+  # aws_security_group.shinjuku_rds_sg01 will be updated in-place
+  ~ resource "aws_security_group" "shinjuku_rds_sg01" {
+        id                     = "sg-0f77e84c33db1c83f"
+      ~ ingress                = [
+          - {
+              - cidr_blocks      = [
+                  - "10.200.0.0/16",
+                ]
+              - description      = "Allow MySQL from Sao Paulo VPC via TGW Lab 3A cross-region"
+              - from_port        = 3306
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 3306
+            },
+            # (1 unchanged element hidden)
+        ]
+        name                   = "shinjuku-final-rds-sg01"
+        tags                   = {
+            "Name" = "shinjuku-final-rds-sg01"
+        }
+        # (9 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 3 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+aws_route53_record.shinjuku_acm_validation["app.firstpointand.click"]: Modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_route53_record.shinjuku_cf_validation["app.firstpointand.click"]: Modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_security_group.shinjuku_rds_sg01: Modifying... [id=sg-0f77e84c33db1c83f]
+aws_security_group.shinjuku_rds_sg01: Modifications complete after 5s [id=sg-0f77e84c33db1c83f]
+aws_route53_record.shinjuku_acm_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m10s elapsed]
+aws_route53_record.shinjuku_cf_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m10s elapsed]
+aws_route53_record.shinjuku_cf_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m20s elapsed]
+aws_route53_record.shinjuku_acm_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m20s elapsed]
+aws_route53_record.shinjuku_cf_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m30s elapsed]
+aws_route53_record.shinjuku_acm_validation["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m30s elapsed]
+aws_route53_record.shinjuku_acm_validation["app.firstpointand.click"]: Modifications complete after 34s [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_route53_record.shinjuku_cf_validation["app.firstpointand.click"]: Modifications complete after 34s [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+
+Apply complete! Resources: 0 added, 3 changed, 0 destroyed.
+
+Outputs:
+
+alb_dns_name = "shinjuku-final-alb01-1645860953.ap-northeast-1.elb.amazonaws.com"
+alb_sg_id = "sg-0acbb6a01bd13be28"
+cloudfront_distribution_id = "E1MQONXZ6LPX94"
+shinjuku_alb_logs_bucket_name = "shinjuku-final-alb-logs-975598471165"
+shinjuku_apex_url_https = "https://firstpointand.click"
+shinjuku_app_url_https = "https://app.firstpointand.click"
+shinjuku_ec2_instance_id = "i-0471e6059c97cf2e5"
+shinjuku_log_group_name = "/aws/ec2/shinjuku-final-rds-app"
+shinjuku_origin_header_value = <sensitive>
+shinjuku_private_subnet_ids = [
+  "subnet-0fc27a548c818ca93",
+  "subnet-07b96d34b624cb5df",
+]
+shinjuku_public_subnet_ids = [
+  "subnet-0a3ec2949828b4162",
+  "subnet-01896031a79b39a85",
+]
+shinjuku_rds_endpoint = "shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com"
+shinjuku_rds_port = 3306
+shinjuku_route53_zone_id = "Z0577510JJCMGIYZ7086"
+shinjuku_sns_topic_arn = "arn:aws:sns:ap-northeast-1:975598471165:shinjuku-final-db-incidents"
+shinjuku_vpc_id = "vpc-0b9de40ee844fa645"
+shinjuku_waf_log_destination = "cloudwatch"
+target_group_arn = "arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:targetgroup/shinjuku-final-tg01/813df654607557dc"
+tokyo_tgw_id = "tgw-0372e6a6b4b4da24b"
+tokyo_tgw_peering_attachment_id = "tgw-attach-001ca2046d97cf069"
+tokyo_vpc_cidr = "10.100.0.0/16"
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ aws ec2 describe-security-groups \
+  --region ap-northeast-1 \
+  --filters "Name=group-name,Values=shinjuku-final-rds-sg01" \
+  --query "SecurityGroups[].IpPermissions[?FromPort==\`3306\`]" \
+  --output json
+[
+    [
+        {
+            "IpProtocol": "tcp",
+            "FromPort": 3306,
+            "ToPort": 3306,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "MySQL from Tokyo EC2",
+                    "UserId": "975598471165",
+                    "GroupId": "sg-05b82ae1d94f2d579"
+                }
+            ],
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+        }
+    ]
+]
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ ^C
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ terraform state show aws_security_group_rule.shinjuku_rds_ingress_from_saopaulo
+# aws_security_group_rule.shinjuku_rds_ingress_from_saopaulo:
+resource "aws_security_group_rule" "shinjuku_rds_ingress_from_saopaulo" {
+    cidr_blocks            = [
+        "10.200.0.0/16",
+    ]
+    description            = "Allow MySQL from Sao Paulo VPC via TGW Lab 3A cross-region"
+    from_port              = 3306
+    id                     = "sgrule-176767296"
+    protocol               = "tcp"
+    region                 = "ap-northeast-1"
+    security_group_id      = "sg-0f77e84c33db1c83f"
+    security_group_rule_id = "sgr-0815de11504745c25"
+    self                   = false
+    to_port                = 3306
+    type                   = "ingress"
+}
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ ^C
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ aws rds describe-db-instances \
+  --region ap-northeast-1 \
+  --query "DBInstances[].VpcSecurityGroups" \
+  --output json
+[
+    [
+        {
+            "VpcSecurityGroupId": "sg-0f77e84c33db1c83f",
+            "Status": "active"
+        }
+    ]
+]
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ ^C
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ aws ec2 describe-security-groups \
+  --region ap-northeast-1 \
+  --group-ids sg-0f77e84c33db1c83f \
+  --query "SecurityGroups[].IpPermissions[?FromPort==\`3306\`]" \
+  --output json
+[
+    [
+        {
+            "IpProtocol": "tcp",
+            "FromPort": 3306,
+            "ToPort": 3306,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "MySQL from Tokyo EC2",
+                    "UserId": "975598471165",
+                    "GroupId": "sg-05b82ae1d94f2d579"
+                }
+            ],
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+        }
+    ]
+]
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ ^C
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ cd tokyo/
+terraform taint aws_security_group_rule.shinjuku_rds_ingress_from_saopaulo
+terraform apply \
+  -var="saopaulo_tgw_id=tgw-055c4115682138ae5" \
+  -var="tgw_peering_accepted=true" \
+  -var="ec2_ami_id=ami-088b486f20fab3f0e"
+bash: cd: tokyo/: No such file or directory
+Resource instance aws_security_group_rule.shinjuku_rds_ingress_from_saopaulo has been marked as tainted.
+random_password.shinjuku_origin_header_value01: Refreshing state... [id=none]
+aws_cloudwatch_log_group.shinjuku_waf_log_group01[0]: Refreshing state... [id=aws-waf-logs-shinjuku-final-webacl01]
+aws_acm_certificate.shinjuku_cf_cert01: Refreshing state... [id=arn:aws:acm:us-east-1:975598471165:certificate/798d1779-da77-4b2c-b262-2e072069f00c]
+aws_wafv2_web_acl.shinjuku_waf01[0]: Refreshing state... [id=944deb41-92c4-49ac-8f0d-775c490d775e]
+aws_wafv2_web_acl.shinjuku_cf_waf01: Refreshing state... [id=55933ab9-a596-4d21-bec0-b3692446a9e1]
+data.aws_elb_service_account.main: Reading...
+aws_vpc.shinjuku_vpc01: Refreshing state... [id=vpc-0b9de40ee844fa645]
+data.aws_region.shinjuku_region01: Reading...
+aws_ec2_transit_gateway.shinjuku_tgw01: Refreshing state... [id=tgw-0372e6a6b4b4da24b]
+aws_eip.shinjuku_nat_eip01: Refreshing state... [id=eipalloc-01aebba8661d707e8]
+aws_cloudfront_origin_request_policy.shinjuku_orp_api01: Refreshing state... [id=1eb39008-4529-46ee-b3aa-a7e6fe18129d]
+data.aws_elb_service_account.main: Read complete after 0s [id=582318560864]
+data.aws_region.shinjuku_region01: Read complete after 0s [id=ap-northeast-1]
+aws_secretsmanager_secret.shinjuku_db_secret01: Refreshing state... [id=arn:aws:secretsmanager:ap-northeast-1:975598471165:secret:shinjuku-final/rds/mysql1-Ud6iv9]
+aws_iam_role.shinjuku_ec2_role01: Refreshing state... [id=shinjuku-final-ec2-role01]
+data.aws_route53_zone.shinjuku_existing_zone01: Reading...
+aws_cloudfront_cache_policy.shinjuku_cache_static01: Refreshing state... [id=96f884fc-c5ef-434a-98d7-1a969cefc458]
+aws_cloudwatch_log_group.shinjuku_log_group01: Refreshing state... [id=/aws/ec2/shinjuku-final-rds-app]
+aws_sns_topic.shinjuku_sns_topic01: Refreshing state... [id=arn:aws:sns:ap-northeast-1:975598471165:shinjuku-final-db-incidents]
+aws_cloudfront_response_headers_policy.shinjuku_rsp_static01: Refreshing state... [id=70b24d46-925d-48be-b61b-a87092d0d164]
+data.aws_route53_zone.shinjuku_existing_zone01: Read complete after 1s [id=Z0577510JJCMGIYZ7086]
+aws_cloudfront_origin_request_policy.shinjuku_orp_static01: Refreshing state... [id=9b5e1a85-7518-4c4c-b40c-2dc07e516269]
+aws_cloudfront_cache_policy.shinjuku_cache_api_disabled01: Refreshing state... [id=1c4a9eb2-684e-46e6-a9d1-d10c5ba41700]
+data.aws_caller_identity.shinjuku_self01: Reading...
+data.aws_ec2_managed_prefix_list.shinjuku_cf_origin_facing01: Reading...
+data.aws_caller_identity.shinjuku_self01: Read complete after 0s [id=975598471165]
+aws_acm_certificate.shinjuku_acm_cert01: Refreshing state... [id=arn:aws:acm:ap-northeast-1:975598471165:certificate/914ddeec-0b91-4cb6-9e9d-0bed79f819d2]
+aws_ssm_parameter.shinjuku_db_name_param: Refreshing state... [id=/lab/db/name]
+aws_iam_role_policy_attachment.shinjuku_ec2_cw_attach: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy]
+aws_iam_role_policy_attachment.shinjuku_ec2_ssm_attach: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+aws_iam_role_policy_attachment.shinjuku_ec2_secrets_attach: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::aws:policy/SecretsManagerReadWrite]
+aws_iam_instance_profile.shinjuku_instance_profile01: Refreshing state... [id=shinjuku-final-instance-profile01]
+aws_route53_record.shinjuku_cf_validation["firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__7f4672efd368aa32db37ec2fc438f094.firstpointand.click._CNAME]
+aws_route53_record.shinjuku_cf_validation["app.firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_iam_policy.shinjuku_leastpriv_read_params01: Refreshing state... [id=arn:aws:iam::975598471165:policy/shinjuku-final-lp-ssm-read01]
+aws_s3_bucket.shinjuku_alb_logs_bucket01[0]: Refreshing state... [id=shinjuku-final-alb-logs-975598471165]
+aws_ec2_transit_gateway_peering_attachment.shinjuku_tgw_peering01: Refreshing state... [id=tgw-attach-001ca2046d97cf069]
+data.aws_ec2_managed_prefix_list.shinjuku_cf_origin_facing01: Read complete after 1s [id=pl-58a04531]
+aws_iam_policy.shinjuku_leastpriv_cwlogs01: Refreshing state... [id=arn:aws:iam::975598471165:policy/shinjuku-final-lp-cwlogs01]
+aws_iam_policy.shinjuku_leastpriv_read_secret01: Refreshing state... [id=arn:aws:iam::975598471165:policy/shinjuku-final-lp-secrets-read01]
+aws_cloudwatch_metric_alarm.shinjuku_db_alarm01: Refreshing state... [id=shinjuku-final-db-connection-failure]
+aws_sns_topic_subscription.shinjuku_sns_sub01: Refreshing state... [id=arn:aws:sns:ap-northeast-1:975598471165:shinjuku-final-db-incidents:dd42762c-2654-47bc-a2a4-3431e1ae282c]
+aws_iam_role_policy_attachment.shinjuku_attach_lp_params01: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::975598471165:policy/shinjuku-final-lp-ssm-read01]
+aws_acm_certificate_validation.shinjuku_cf_validation01: Refreshing state... [id=2026-03-26 00:27:22.742 +0000 UTC]
+aws_ec2_transit_gateway_route.shinjuku_tgw_route_to_saopaulo01[0]: Refreshing state... [id=tgw-rtb-0a5bf5f4167f1a75f_10.200.0.0/16]
+aws_iam_role_policy_attachment.shinjuku_attach_lp_cwlogs01: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::975598471165:policy/shinjuku-final-lp-cwlogs01]
+aws_route53_record.shinjuku_acm_validation["app.firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_route53_record.shinjuku_acm_validation_records01["app.firstpointand.click"]: Refreshing state... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_iam_role_policy_attachment.shinjuku_attach_lp_secret01: Refreshing state... [id=shinjuku-final-ec2-role01/arn:aws:iam::975598471165:policy/shinjuku-final-lp-secrets-read01]
+aws_acm_certificate_validation.shinjuku_acm_validation01_dns_bonus[0]: Refreshing state... [id=2026-03-26 00:27:24.61 +0000 UTC]
+aws_acm_certificate_validation.shinjuku_acm_validation01: Refreshing state... [id=2026-03-26 00:27:24.61 +0000 UTC]
+aws_route_table.shinjuku_private_rt01: Refreshing state... [id=rtb-0d70451d36e7a32b9]
+aws_security_group.shinjuku_vpce_sg01: Refreshing state... [id=sg-011279c06fd1d623b]
+aws_security_group.shinjuku_alb_sg01: Refreshing state... [id=sg-0acbb6a01bd13be28]
+aws_lb_target_group.shinjuku_tg01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:targetgroup/shinjuku-final-tg01/813df654607557dc]
+aws_security_group.shinjuku_ec2_sg01: Refreshing state... [id=sg-05b82ae1d94f2d579]
+aws_internet_gateway.shinjuku_igw01: Refreshing state... [id=igw-002918abe479efb78]
+aws_route_table.shinjuku_public_rt01: Refreshing state... [id=rtb-0ebbe09e8741a1d67]
+aws_subnet.shinjuku_public_subnets[0]: Refreshing state... [id=subnet-0a3ec2949828b4162]
+aws_subnet.shinjuku_public_subnets[1]: Refreshing state... [id=subnet-01896031a79b39a85]
+aws_subnet.shinjuku_private_subnets[0]: Refreshing state... [id=subnet-0fc27a548c818ca93]
+aws_security_group_rule.shinjuku_vpce_sg01_ingress_https_from_ec2: Refreshing state... [id=sgrule-3100816824]
+aws_subnet.shinjuku_private_subnets[1]: Refreshing state... [id=subnet-07b96d34b624cb5df]
+aws_vpc_security_group_ingress_rule.ingress_22: Refreshing state... [id=sgr-0796c311e4cdae2bd]
+aws_security_group.shinjuku_rds_sg01: Refreshing state... [id=sg-0f77e84c33db1c83f]
+aws_vpc_endpoint.shinjuku_vpce_s3_gw01: Refreshing state... [id=vpce-08a2d486df47c0d7a]
+aws_security_group_rule.shinjuku_alb_ingress_cf44301: Refreshing state... [id=sgrule-2609328376]
+aws_security_group_rule.shinjuku_ec2_ingress_from_alb01: Refreshing state... [id=sgrule-1443953089]
+aws_wafv2_web_acl_logging_configuration.shinjuku_waf_logging01[0]: Refreshing state... [id=arn:aws:wafv2:us-east-1:975598471165:global/webacl/shinjuku-final-waf01/944deb41-92c4-49ac-8f0d-775c490d775e]
+aws_route.shinjuku_public_default_route: Refreshing state... [id=r-rtb-0ebbe09e8741a1d671080289494]
+aws_nat_gateway.shinjuku_nat01: Refreshing state... [id=nat-07644fcd7e6b05aea]
+aws_route_table_association.shinjuku_public_rta[0]: Refreshing state... [id=rtbassoc-07a1464ee0490d05c]
+aws_route_table_association.shinjuku_public_rta[1]: Refreshing state... [id=rtbassoc-011dc761cd6b9ea8e]
+aws_vpc_endpoint.shinjuku_vpce_ssmmessages01: Refreshing state... [id=vpce-0c78e091ce5ce96c5]
+aws_vpc_endpoint.shinjuku_vpce_logs01: Refreshing state... [id=vpce-095cde5e97d87ced4]
+aws_route_table_association.shinjuku_private_rta[0]: Refreshing state... [id=rtbassoc-0fc1a360d3f83d978]
+aws_instance.shinjuku_ec201_private_bonus: Refreshing state... [id=i-082f91f709ae43e7d]
+aws_route_table_association.shinjuku_private_rta[1]: Refreshing state... [id=rtbassoc-0fc2c894bc3f69dad]
+aws_vpc_endpoint.shinjuku_vpce_ec2messages01: Refreshing state... [id=vpce-0d869e0f57958b991]
+aws_ec2_transit_gateway_vpc_attachment.shinjuku_tgw_vpc_attach01: Refreshing state... [id=tgw-attach-031dad7a86e912836]
+aws_vpc_endpoint.shinjuku_vpce_secrets01: Refreshing state... [id=vpce-0d3a897d4cdf51f34]
+aws_db_subnet_group.shinjuku_rds_subnet_group01: Refreshing state... [id=shinjuku-final-rds-subnet-group01]
+aws_vpc_endpoint.shinjuku_vpce_kms01: Refreshing state... [id=vpce-0785ca5f4bcda0a66]
+aws_vpc_endpoint.shinjuku_vpce_ssm01: Refreshing state... [id=vpce-0444ff9409ec375ee]
+aws_instance.shinjuku_ec201: Refreshing state... [id=i-0471e6059c97cf2e5]
+aws_security_group_rule.shinjuku_rds_ingress_from_saopaulo: Refreshing state... [id=sgrule-176767296]
+aws_route.shinjuku_private_default_route: Refreshing state... [id=r-rtb-0d70451d36e7a32b91080289494]
+aws_route.shinjuku_private_to_saopaulo: Refreshing state... [id=r-rtb-0d70451d36e7a32b94252409353]
+aws_db_instance.shinjuku_rds01: Refreshing state... [id=db-GHRRMW3TSZMQL2QX2PORABJ3CM]
+aws_s3_bucket_public_access_block.shinjuku_alb_logs_pab01[0]: Refreshing state... [id=shinjuku-final-alb-logs-975598471165]
+aws_s3_bucket_ownership_controls.shinjuku_alb_logs_owner01[0]: Refreshing state... [id=shinjuku-final-alb-logs-975598471165]
+aws_lb.shinjuku_alb01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:loadbalancer/app/shinjuku-final-alb01/69bd91fc20d9a734]
+aws_s3_bucket_policy.shinjuku_alb_logs_policy01[0]: Refreshing state... [id=shinjuku-final-alb-logs-975598471165]
+aws_ssm_parameter.shinjuku_db_endpoint_param: Refreshing state... [id=/lab/db/endpoint]
+aws_ssm_parameter.shinjuku_db_port_param: Refreshing state... [id=/lab/db/port]
+aws_secretsmanager_secret_version.shinjuku_db_secret_version01: Refreshing state... [id=arn:aws:secretsmanager:ap-northeast-1:975598471165:secret:shinjuku-final/rds/mysql1-Ud6iv9|terraform-20260326003324632100000010]
+aws_cloudwatch_dashboard.shinjuku_dashboard01: Refreshing state... [id=shinjuku-final-dashboard01]
+aws_cloudwatch_metric_alarm.shinjuku_alb_5xx_alarm01: Refreshing state... [id=shinjuku-final-alb-5xx-alarm01]
+aws_lb_listener.shinjuku_http_listener01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:listener/app/shinjuku-final-alb01/69bd91fc20d9a734/15398fcc299ab1a2]
+aws_lb_listener.shinjuku_https_listener01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:listener/app/shinjuku-final-alb01/69bd91fc20d9a734/2bf07c0a435e87bc]
+aws_cloudfront_distribution.shinjuku_cf01: Refreshing state... [id=E1MQONXZ6LPX94]
+aws_route53_record.shinjuku_app_to_cf02: Refreshing state... [id=Z0577510JJCMGIYZ7086_app.firstpointand.click_A]
+aws_route53_record.shinjuku_apex_to_cf02: Refreshing state... [id=Z0577510JJCMGIYZ7086_firstpointand.click_A]
+aws_lb_target_group_attachment.shinjuku_tg_attach01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:targetgroup/shinjuku-final-tg01/813df654607557dc,i-082f91f709ae43e7d,80]
+aws_lb_listener_rule.shinjuku_default_block01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:listener-rule/app/shinjuku-final-alb01/69bd91fc20d9a734/2bf07c0a435e87bc/fd353b9ddddd1eab]
+aws_lb_listener_rule.shinjuku_require_origin_header01: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:listener-rule/app/shinjuku-final-alb01/69bd91fc20d9a734/2bf07c0a435e87bc/80e4ac454cbc4b76]
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # aws_route53_record.shinjuku_acm_validation_records01["app.firstpointand.click"] will be updated in-place
+  ~ resource "aws_route53_record" "shinjuku_acm_validation_records01" {
+        id                               = "Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME"
+        name                             = "_2887c024ef221b96b378e669c909a316.app.firstpointand.click"
+      ~ ttl                              = 60 -> 6
+        # (8 unchanged attributes hidden)
+    }
+
+  # aws_security_group_rule.shinjuku_rds_ingress_from_saopaulo will be created
+  + resource "aws_security_group_rule" "shinjuku_rds_ingress_from_saopaulo" {
+      + cidr_blocks              = [
+          + "10.200.0.0/16",
+        ]
+      + description              = "Allow MySQL from Sao Paulo VPC via TGW Lab 3A cross-region"
+      + from_port                = 3306
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + region                   = "ap-northeast-1"
+      + security_group_id        = "sg-0f77e84c33db1c83f"
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 3306
+      + type                     = "ingress"
+    }
+
+Plan: 1 to add, 1 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+aws_security_group_rule.shinjuku_rds_ingress_from_saopaulo: Creating...
+aws_route53_record.shinjuku_acm_validation_records01["app.firstpointand.click"]: Modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+aws_security_group_rule.shinjuku_rds_ingress_from_saopaulo: Creation complete after 2s [id=sgrule-176767296]
+aws_route53_record.shinjuku_acm_validation_records01["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m10s elapsed]
+aws_route53_record.shinjuku_acm_validation_records01["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m20s elapsed]
+aws_route53_record.shinjuku_acm_validation_records01["app.firstpointand.click"]: Still modifying... [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b...c909a316.app.firstpointand.click_CNAME, 00m30s elapsed]
+aws_route53_record.shinjuku_acm_validation_records01["app.firstpointand.click"]: Modifications complete after 33s [id=Z0577510JJCMGIYZ7086__2887c024ef221b96b378e669c909a316.app.firstpointand.click_CNAME]
+
+Apply complete! Resources: 1 added, 1 changed, 0 destroyed.
+
+Outputs:
+
+alb_dns_name = "shinjuku-final-alb01-1645860953.ap-northeast-1.elb.amazonaws.com"
+alb_sg_id = "sg-0acbb6a01bd13be28"
+cloudfront_distribution_id = "E1MQONXZ6LPX94"
+shinjuku_alb_logs_bucket_name = "shinjuku-final-alb-logs-975598471165"
+shinjuku_apex_url_https = "https://firstpointand.click"
+shinjuku_app_url_https = "https://app.firstpointand.click"
+shinjuku_ec2_instance_id = "i-0471e6059c97cf2e5"
+shinjuku_log_group_name = "/aws/ec2/shinjuku-final-rds-app"
+shinjuku_origin_header_value = <sensitive>
+shinjuku_private_subnet_ids = [
+  "subnet-0fc27a548c818ca93",
+  "subnet-07b96d34b624cb5df",
+]
+shinjuku_public_subnet_ids = [
+  "subnet-0a3ec2949828b4162",
+  "subnet-01896031a79b39a85",
+]
+shinjuku_rds_endpoint = "shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com"
+shinjuku_rds_port = 3306
+shinjuku_route53_zone_id = "Z0577510JJCMGIYZ7086"
+shinjuku_sns_topic_arn = "arn:aws:sns:ap-northeast-1:975598471165:shinjuku-final-db-incidents"
+shinjuku_vpc_id = "vpc-0b9de40ee844fa645"
+shinjuku_waf_log_destination = "cloudwatch"
+target_group_arn = "arn:aws:elasticloadbalancing:ap-northeast-1:975598471165:targetgroup/shinjuku-final-tg01/813df654607557dc"
+tokyo_tgw_id = "tgw-0372e6a6b4b4da24b"
+tokyo_tgw_peering_attachment_id = "tgw-attach-001ca2046d97cf069"
+tokyo_vpc_cidr = "10.100.0.0/16"
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ ^C
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ aws ec2 describe-security-groups \
+  --region ap-northeast-1 \
+  --group-ids sg-0f77e84c33db1c83f \
+  --query "SecurityGroups[].IpPermissions[?FromPort==\`3306\`]" \
+  --output json
+[
+    [
+        {
+            "IpProtocol": "tcp",
+            "FromPort": 3306,
+            "ToPort": 3306,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "MySQL from Tokyo EC2",
+                    "UserId": "975598471165",
+                    "GroupId": "sg-05b82ae1d94f2d579"
+                }
+            ],
+            "IpRanges": [
+                {
+                    "Description": "Allow MySQL from Sao Paulo VPC via TGW Lab 3A cross-region",
+                    "CidrIp": "10.200.0.0/16"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+        }
+    ]
+]
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ ^C
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ aws ec2 describe-route-tables \
+  --region ap-northeast-1 \
+  --filters "Name=vpc-id,Values=vpc-0b9de40ee844fa645" \
+  --query "RouteTables[].Routes[]" \
+  --output json
+[
+    {
+        "DestinationCidrBlock": "10.100.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.100.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-002918abe479efb78",
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.100.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "10.200.0.0/16",
+        "TransitGatewayId": "tgw-0372e6a6b4b4da24b",
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": "nat-07644fcd7e6b05aea",
+        "Origin": "CreateRoute",
+        "State": "active"
+    },
+    {
+        "DestinationPrefixListId": "pl-61a54008",
+        "GatewayId": "vpce-08a2d486df47c0d7a",
+        "Origin": "CreateRoute",
+        "State": "active"
+    }
+]
+
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ ^C
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$ ^C
+
+jorun@Simpkij3421 MINGW64 /c/users/jorun/documents/theowaf/armageddon/armageddon_repo/armageddon_clone/3a_lab_au/tokyo_files (main)
+$
