@@ -1,0 +1,722 @@
+======================================================================
+LAB 3B — CHANGE PROOF (CLOUDTRAIL — LIVE OUTPUT)
+Generated : 2026-03-30T23:00:10Z
+Account   : 200819971986
+Note      : CloudTrail Event History provides a 90-day immutable
+            record of management events by default (no Trail required).
+======================================================================
+
+{
+  "tokyo": [
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:56:42-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-027412143e0d6f851",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:55:31-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-050bbda9b64453f00",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:55:20-04:00",
+      "event": "DescribeRouteTables",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:55:18-04:00",
+      "event": "DescribeTransitGatewayAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:55:17-04:00",
+      "event": "DescribeTransitGateways",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:53:54-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-050bbda9b64453f00",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:53:17-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-027412143e0d6f851",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:51:42-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-027412143e0d6f851",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:50:31-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-050bbda9b64453f00",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:50:01-04:00",
+      "event": "DescribeRouteTables",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:49:46-04:00",
+      "event": "DescribeTransitGatewayAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:49:46-04:00",
+      "event": "DescribeTransitGateways",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:46:42-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-027412143e0d6f851",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:46:23-04:00",
+      "event": "DescribeDBInstances",
+      "user": "AWSCLI4",
+      "source": "rds.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:45:31-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-050bbda9b64453f00",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:43:41-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-050bbda9b64453f00",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:43:32-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-050bbda9b64453f00",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:43:12-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-027412143e0d6f851",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:43:02-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-027412143e0d6f851",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:41:42-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-027412143e0d6f851",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:40:31-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-050bbda9b64453f00",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:36:42-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-027412143e0d6f851",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:35:31-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-050bbda9b64453f00",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:33:33-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-050bbda9b64453f00",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:33:18-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-027412143e0d6f851",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:42-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-027412143e0d6f851",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:12-04:00",
+      "event": "SearchTransitGatewayRoutes",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:12-04:00",
+      "event": "SearchTransitGatewayRoutes",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:10-04:00",
+      "event": "SearchTransitGatewayRoutes",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:09-04:00",
+      "event": "SearchTransitGatewayRoutes",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:08-04:00",
+      "event": "SearchTransitGatewayRoutes",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:08-04:00",
+      "event": "SearchTransitGatewayRoutes",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:08-04:00",
+      "event": "DescribeSecurityGroups",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:07-04:00",
+      "event": "CreateTransitGatewayRoute",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:07-04:00",
+      "event": "RevokeSecurityGroupIngress",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:06-04:00",
+      "event": "DescribeSecurityGroups",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:31:05-04:00",
+      "event": "GetCallerIdentity",
+      "user": "AWSCLI4",
+      "source": "sts.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:55-04:00",
+      "event": "DescribeTags",
+      "user": "AWSCLI4",
+      "source": "elasticloadbalancing.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:55-04:00",
+      "event": "DescribeTags",
+      "user": "AWSCLI4",
+      "source": "elasticloadbalancing.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:54-04:00",
+      "event": "DescribeRules",
+      "user": "AWSCLI4",
+      "source": "elasticloadbalancing.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:54-04:00",
+      "event": "DescribeTags",
+      "user": "AWSCLI4",
+      "source": "elasticloadbalancing.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:54-04:00",
+      "event": "DescribeListenerAttributes",
+      "user": "AWSCLI4",
+      "source": "elasticloadbalancing.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:54-04:00",
+      "event": "DescribeAlarms",
+      "user": "AWSCLI4",
+      "source": "monitoring.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:54-04:00",
+      "event": "DescribeListenerAttributes",
+      "user": "AWSCLI4",
+      "source": "elasticloadbalancing.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:54-04:00",
+      "event": "ListTagsForResource",
+      "user": "AWSCLI4",
+      "source": "monitoring.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:54-04:00",
+      "event": "DescribeRules",
+      "user": "AWSCLI4",
+      "source": "elasticloadbalancing.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:54-04:00",
+      "event": "DescribeListeners",
+      "user": "AWSCLI4",
+      "source": "elasticloadbalancing.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:54-04:00",
+      "event": "DescribeTags",
+      "user": "AWSCLI4",
+      "source": "elasticloadbalancing.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:53-04:00",
+      "event": "DescribeParameters",
+      "user": "AWSCLI4",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "ap-northeast-1",
+      "time": "2026-03-30 18:30:53-04:00",
+      "event": "DescribeTargetHealth",
+      "user": "AWSCLI4",
+      "source": "elasticloadbalancing.amazonaws.com"
+    }
+  ],
+  "saopaulo": [
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:56:34-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-0f6a4bb8d4c76e5c9",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:55:22-04:00",
+      "event": "DescribeRouteTables",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:55:19-04:00",
+      "event": "DescribeTransitGateways",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:55:19-04:00",
+      "event": "DescribeTransitGatewayAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:55:18-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-0f6a4bb8d4c76e5c9",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:54:57-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-060e33464e82c2f1c",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:53:33-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-060e33464e82c2f1c",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:51:34-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-0f6a4bb8d4c76e5c9",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:50:05-04:00",
+      "event": "DescribeRouteTables",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:49:52-04:00",
+      "event": "DescribeTransitGateways",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:49:52-04:00",
+      "event": "DescribeTransitGatewayAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:48:33-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-060e33464e82c2f1c",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:48:04-04:00",
+      "event": "AssumeRole",
+      "user": null,
+      "source": "sts.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:48:04-04:00",
+      "event": "AssumeRole",
+      "user": null,
+      "source": "sts.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:48:04-04:00",
+      "event": "AssumeRole",
+      "user": null,
+      "source": "sts.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:48:04-04:00",
+      "event": "AssumeRole",
+      "user": null,
+      "source": "sts.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:46:34-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-0f6a4bb8d4c76e5c9",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:46:24-04:00",
+      "event": "DescribeDBInstances",
+      "user": "AWSCLI4",
+      "source": "rds.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:45:13-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-060e33464e82c2f1c",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:45:06-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-0f6a4bb8d4c76e5c9",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:43:33-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-060e33464e82c2f1c",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:41:34-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-0f6a4bb8d4c76e5c9",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:38:33-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-060e33464e82c2f1c",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:36:34-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-0f6a4bb8d4c76e5c9",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:35:18-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-0f6a4bb8d4c76e5c9",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:34:58-04:00",
+      "event": "ListInstanceAssociations",
+      "user": "i-060e33464e82c2f1c",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:34:58-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-0f6a4bb8d4c76e5c9",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:34:54-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-060e33464e82c2f1c",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:33:33-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-060e33464e82c2f1c",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:31:34-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-0f6a4bb8d4c76e5c9",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:29:11-04:00",
+      "event": "SearchTransitGatewayRoutes",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:29:10-04:00",
+      "event": "SearchTransitGatewayRoutes",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:29:09-04:00",
+      "event": "SearchTransitGatewayRoutes",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:29:09-04:00",
+      "event": "SearchTransitGatewayRoutes",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:29:08-04:00",
+      "event": "CreateTransitGatewayRoute",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:29:08-04:00",
+      "event": "SearchTransitGatewayRoutes",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:29:07-04:00",
+      "event": "CreateTags",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:29:07-04:00",
+      "event": "DescribeTransitGatewayPeeringAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:29:07-04:00",
+      "event": "DescribeTransitGateways",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:29:06-04:00",
+      "event": "DescribeTransitGatewayPeeringAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:28:56-04:00",
+      "event": "DescribeTransitGatewayPeeringAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:28:46-04:00",
+      "event": "DescribeTransitGatewayPeeringAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:28:36-04:00",
+      "event": "DescribeTransitGatewayPeeringAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:28:33-04:00",
+      "event": "UpdateInstanceInformation",
+      "user": "i-060e33464e82c2f1c",
+      "source": "ssm.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:28:25-04:00",
+      "event": "DescribeTransitGatewayPeeringAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:28:15-04:00",
+      "event": "DescribeTransitGatewayPeeringAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:28:05-04:00",
+      "event": "DescribeTransitGatewayPeeringAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:27:55-04:00",
+      "event": "DescribeTransitGatewayPeeringAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:27:45-04:00",
+      "event": "DescribeTransitGatewayPeeringAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    },
+    {
+      "region": "sa-east-1",
+      "time": "2026-03-30 18:27:34-04:00",
+      "event": "DescribeTransitGatewayPeeringAttachments",
+      "user": "AWSCLI4",
+      "source": "ec2.amazonaws.com"
+    }
+  ]
+}
+
+======================================================================
+  Total Tokyo events    : 50
+  Total SP events       : 50
+  Retention             : 90 days (CloudTrail Event History default)
+  Tamper resistant      : Yes — event history is read-only
+  Long-term option      : Create Trail -> S3 with versioning
+======================================================================

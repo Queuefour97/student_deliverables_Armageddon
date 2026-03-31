@@ -1,0 +1,39 @@
+======================================================================
+LAB 3B — WAF SECURITY PROOF (LIVE OUTPUT)
+Generated        : 2026-03-30T23:35:28Z
+Account          : 200819971986
+CF Distribution  : E1MQONXZ6LPX94
+Log group        : aws-waf-logs-shinjuku-cf-waf01
+Window           : last 30 minutes
+======================================================================
+
+{
+  "actions": [
+    {
+      "action": "ALLOW",
+      "hits": "22"
+    },
+    {
+      "action": "BLOCK",
+      "hits": "1"
+    }
+  ],
+  "top_ips": [
+    {
+      "httpRequest.clientIp": "99.184.18.128",
+      "hits": "23"
+    }
+  ]
+}
+
+======================================================================
+WAF LOGGING DESTINATIONS (supported by this lab):
+  1. CloudWatch Logs  (aws-waf-logs-* prefix required)  <-- ACTIVE
+  2. S3               (s3://aws-waf-logs-* prefix required)
+  3. Kinesis Firehose (aws-waf-logs-* prefix required)
+
+CLI verification:
+  aws wafv2 list-web-acls --scope CLOUDFRONT --region us-east-1
+  aws wafv2 list-web-acls --scope REGIONAL --region ap-northeast-1
+  aws wafv2 list-web-acls --scope REGIONAL --region sa-east-1
+======================================================================

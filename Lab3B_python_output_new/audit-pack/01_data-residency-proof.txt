@@ -1,0 +1,31 @@
+======================================================================
+LAB 3B — DATA RESIDENCY PROOF
+Generated : 2026-03-30T22:45:48Z
+Account   : 200819971986
+======================================================================
+
+[ CHECK 1 ] RDS instances in Tokyo (ap-northeast-1)
+--------------------------------------------------
+  DB Identifier  : shinjuku-final-rds01
+  Status         : available
+  Availability   : ap-northeast-1c
+  Endpoint       : shinjuku-final-rds01.cf2s8kkgau9w.ap-northeast-1.rds.amazonaws.com
+  Engine         : mysql
+  Encrypted      : False
+  Multi-AZ       : False
+
+  RESULT: PASS — 1 RDS instance(s) confirmed in ap-northeast-1
+
+[ CHECK 2 ] RDS instances in Sao Paulo (sa-east-1)
+--------------------------------------------------
+  Instances found : 0
+  RESULT: PASS — No RDS in sa-east-1. APPI data residency confirmed.
+
+======================================================================
+SUMMARY
+--------------------------------------------------
+  Overall result : PASS
+  APPI principle : Global access != Global storage
+  PHI location   : ap-northeast-1 ONLY
+  Compute only   : sa-east-1 (no DB, no PHI)
+======================================================================
